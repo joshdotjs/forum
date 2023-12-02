@@ -1,4 +1,6 @@
 import { MetaTags } from '@redwoodjs/web'
+import ArticlesCell from 'src/components/ArticlesCell'
+import LocationsCell from 'src/components/LocationsCell'
 
 const HomePage = () => {
   return (
@@ -12,6 +14,16 @@ const HomePage = () => {
       <p>
         My default route is named <code>home</code>, link to me with `
       </p>
+
+      <div>
+        Article Cell:
+        <ArticlesCell />
+      </div>
+
+      <div>
+        Locations Cell:
+        <LocationsCell />
+      </div>
     </>
   )
 }

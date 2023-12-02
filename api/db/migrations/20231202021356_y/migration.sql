@@ -1,0 +1,7 @@
+-- CreateTable
+CREATE TABLE "Place" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "price" TEXT NOT NULL,
+    "address" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

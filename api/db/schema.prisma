@@ -25,3 +25,12 @@ model Post {
   body      String
   createdAt DateTime @default(now())
 }
+
+// ==============================================
+
+model Place {
+  id        Int      @id @default(autoincrement())
+  price     String
+  address   String
+  createdAt DateTime @default(now())
+}
