@@ -14,7 +14,7 @@ const ArticlePage = ({ id }) => {
       </p>
       <p>
         My default route is named <code>article</code>, link to me with `
-        <Link to={routes.article({ id })}>Article</Link>`
+        <Link to={routes.article({ id })}>Article id: {id}</Link>`
       </p>
       <p>My ID is: { id }</p>
 
