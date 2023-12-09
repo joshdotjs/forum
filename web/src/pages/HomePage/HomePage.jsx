@@ -15,10 +15,14 @@ const HomePage = () => {
         My default route is named <code>home</code>, link to me with `
       </p>
 
+      <hr />
+
       <div>
         Article Cell:
         <ArticlesCell />
       </div>
+
+      <hr />
 
       <div>
         Locations Cell:
