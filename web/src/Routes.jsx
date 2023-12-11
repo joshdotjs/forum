@@ -16,6 +16,8 @@ const Routes = () => {
   return (
     <Router>
 
+
+
       <Route path="/article/{id:Int}" page={ArticlePage} name="article" />
 
       <Set wrap={ScaffoldLayout} title="Places" titleTo="places" buttonLabel="New Place" buttonTo="newPlace">
@@ -32,6 +34,7 @@ const Routes = () => {
       </Set>
       <Set wrap={BlogLayout}>
         <Route path="/about" page={AboutPage} name="about" />
+        <Route path="/contact" page={ContactPage} name="contact" />
         <Route path="/" page={HomePage} name="home" />
         <Route notfound page={NotFoundPage} />
       </Set>
