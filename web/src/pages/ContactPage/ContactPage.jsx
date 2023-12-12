@@ -1,4 +1,5 @@
 import { MetaTags } from '@redwoodjs/web'
+import { toast, Toaster } from '@redwoodjs/web/toast'
 import { Form, Label, TextField, TextAreaField, FieldError, Submit } from '@redwoodjs/forms'
 import { useMutation, gql } from '@redwoodjs/web'
 
@@ -12,7 +13,11 @@ const CREATE_CONTACT = gql`
 
 const ContactPage = () => {
 
-  const [create, { loading }] = useMutation(CREATE_CONTACT)
+  const [create, { loading, error }] = useMutation(CREATE_CONTACT, {
+    onCompleted: () => {
+      toast.success('Thank you for your submission!')
+    },
+  })
 
   const onSubmit = (data) => {
     console.log(data)
@@ -27,6 +32,8 @@ const ContactPage = () => {
       <p>
         Find me in <code>./web/src/pages/ContactPage/ContactPage.jsx</code>
       </p>
+
+      <Toaster />
 
       <Form onSubmit={onSubmit}>
         <Label name="name" errorClassName="error">
