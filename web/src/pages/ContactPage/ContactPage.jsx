@@ -1,9 +1,22 @@
 import { MetaTags } from '@redwoodjs/web'
 import { Form, Label, TextField, TextAreaField, FieldError, Submit } from '@redwoodjs/forms'
+import { useMutation, gql } from '@redwoodjs/web'
+
+const CREATE_CONTACT = gql`
+  mutation CreateContactMutation($input: CreateContactInput!) {
+    createContact(input: $input) {
+      id
+    }
+  }
+`
 
 const ContactPage = () => {
+
+  const [create, { loading }] = useMutation(CREATE_CONTACT)
+
   const onSubmit = (data) => {
     console.log(data)
+    create({ variables: { input: data } })
   }
 
   return (
@@ -52,7 +65,7 @@ const ContactPage = () => {
         />
         <FieldError name="message" className="error" />
 
-        <Submit>Save</Submit>
+        <Submit disabled={loading}>Save</Submit>
       </Form>
     </>
   )
