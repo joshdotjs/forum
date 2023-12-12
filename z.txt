@@ -1,0 +1,43 @@
+PROJECT: redwood-auth:
+
+yarn create redwood-app <app-name>
+
+yarn redwood (rw) dev
+yarn workspace web add date-fns
+yarn workspace api add date-fns
+yarn -W add date-fns (adds to outer package.json)
+
+yarn rw generate (g) page feed
+yarn rw g layout base
+yarn rw g component header
+
+yarn rw setup ui tailwindcss
+
+yarn rw storybook
+
+yarn rw test
+p > Nav > [down arrow] > [enter]
+
+
+
+
+yarn rw prisma migrate dev
+yarn rw prisma studio
+yarn rw g scaffold post
+
+yarn g cell Article (for Post)
+
+
+=====================================
+
+PROJECT: redwood-blog:
+
+yarn rw g sdl Contact
+
+- queries and mutations in an SDL file are
+  automatically mapped to resolvers defined in a service
+  -- /api/src/graphql/contacts.sdl.js
+  -- /api/src/services/contacts/contacts.js
+
+- cells are really for getting data out
+  -- for putting data in, we use useMutation hook
