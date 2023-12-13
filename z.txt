@@ -52,4 +52,4 @@ Chapter 4:
 
 4.1 -- Authentication
 yarn rw setup auth dbAuth
-
+yarn rw g dbAuth
