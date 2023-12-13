@@ -1,6 +1,6 @@
 import { MetaTags } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
-import { Form, Label, TextField, TextAreaField, FieldError, Submit, useForm } from '@redwoodjs/forms'
+import { Form, Label, TextField, TextAreaField, FieldError, Submit, useForm, FormError } from '@redwoodjs/forms'
 import { useMutation, gql } from '@redwoodjs/web'
 
 const CREATE_CONTACT = gql`
@@ -40,7 +40,10 @@ const ContactPage = () => {
       <Form
         onSubmit={onSubmit}
         formMethods={formMethods}
+        error={error}
       >
+        <FormError error={error} wrapperClassName='form-error' />
+
         <Label name="name" errorClassName="error">
           Name
         </Label>
@@ -56,13 +59,13 @@ const ContactPage = () => {
         </Label>
         <TextField
           name="email"
-          validation={{
-            required: true,
-            pattern: {
-              value: /^[^@]+@[^.]+\..+$/,
-              message: 'Please enter a valid email address',
-            },
-          }}
+          // validation={{
+          //   required: true,
+          //   pattern: {
+          //     value: /^[^@]+@[^.]+\..+$/,
+          //     message: 'Please enter a valid email address',
+          //   },
+          // }}
           errorClassName="error"
         />
         <FieldError name="email" className="error" />
