@@ -28,7 +28,8 @@ yarn rw g scaffold post
 yarn g cell Article (for Post)
 
 
-=====================================
+=================================================
+=================================================
 
 PROJECT: redwood-blog:
 
@@ -44,3 +45,11 @@ yarn rw g sdl Contact
 
 
 http://localhost:8911/graphql
+
+-------------------------------------------------
+
+Chapter 4:
+
+4.1 -- Authentication
+yarn rw setup auth dbAuth
+
