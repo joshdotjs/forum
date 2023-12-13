@@ -53,3 +53,14 @@ Chapter 4:
 4.1 -- Authentication
 yarn rw setup auth dbAuth
 yarn rw g dbAuth
+yarn rw g secret # generate secret to be copied into .env
+
+- auth summary:
+  -- Use the combination of @requireAuth and @skipAuth
+     directives to lock down access to GraphQL query/mutations,
+  -- Use the </PrivateSet> component to restrict access to
+     entire pages of your app.
+  -- If you only want to restrict access to certain components,
+     or certain parts of a component, you can always get
+     isAuthenticated from the useAuth() hook and then render
+     one thing or another.
