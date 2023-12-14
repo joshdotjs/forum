@@ -64,3 +64,13 @@ yarn rw g secret # generate secret to be copied into .env
      or certain parts of a component, you can always get
      isAuthenticated from the useAuth() hook and then render
      one thing or another.
+
+-------------------------------------------------
+
+Chapter 6:
+
+6. Creating a Comment Form
+
+yarn rw console
+> db.comment.findMany()
+> db.comment.findMany({ where: { postId: 1 }})
