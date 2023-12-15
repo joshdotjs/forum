@@ -72,5 +72,7 @@ Chapter 6:
 6. Creating a Comment Form
 
 yarn rw console
+yarn rw c
 > db.comment.findMany()
 > db.comment.findMany({ where: { postId: 1 }})
+> db.user.update({ where: { id: 1 } , data: { roles: 'admin' } })

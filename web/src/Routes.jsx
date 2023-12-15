@@ -33,7 +33,8 @@ const Routes = () => {
         <Route path="/places/{id:Int}" page={PlacePlacePage} name="place" />
         <Route path="/places" page={PlacePlacesPage} name="places" />
       </Set>
-      <PrivateSet unauthenticated='home'>
+
+      <PrivateSet unauthenticated='home' roles="admin">
         <Set wrap={ScaffoldLayout} title="Posts" titleTo="posts" buttonLabel="New Post" buttonTo="newPost">
           <Route path="/admin/posts/new" page={PostNewPostPage} name="newPost" />
           <Route path="/admin/posts/{id:Int}/edit" page={PostEditPostPage} name="editPost" />
@@ -41,6 +42,7 @@ const Routes = () => {
           <Route path="/admin/posts" page={PostPostsPage} name="posts" />
         </Set>
       </PrivateSet>
+
       <Set wrap={BlogLayout}>
         <Route path="/about" page={AboutPage} name="about" />
         <Route path="/contact" page={ContactPage} name="contact" />

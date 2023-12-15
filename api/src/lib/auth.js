@@ -38,6 +38,7 @@ export const getCurrentUser = async (session) => {
     select: {
       id: true,
       email: true,
+      roles: true,
     },
   })
 }
