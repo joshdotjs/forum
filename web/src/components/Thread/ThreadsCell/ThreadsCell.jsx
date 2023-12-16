@@ -81,10 +81,10 @@ export const Success = ({ threads }) => {
                           User
                         </th>
                         <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-white">
-                          Date
+                          Created
                         </th>
                         <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-0">
-                          <span className="sr-only">Edit</span>
+                          <span className="sr-only">View</span>
                         </th>
                       </tr>
                     </thead>
@@ -100,9 +100,16 @@ export const Success = ({ threads }) => {
                           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-300">{thread.userId}</td>
                           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-300">{thread.createdAt}</td>
                           <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                            <a href="#" className="text-indigo-400 hover:text-indigo-300">
+                            {/* <a href="#" className="text-indigo-400 hover:text-indigo-300">
                               Edit<span className="sr-only">, {key}</span>
-                            </a>
+                            </a> */}
+                            <Link
+                              to={routes.thread({ id: thread.id })}
+                              title={'View thread ' + thread.id}
+                              className="text-indigo-400 hover:text-indigo-300"
+                            >
+                              View<span className="sr-only">, {key}</span>
+                            </Link>
                           </td>
                         </tr>
                       )})}

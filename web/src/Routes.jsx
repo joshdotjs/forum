@@ -25,19 +25,21 @@ const Routes = () => {
       </PrivateSet>
 
       <Set wrap={ForumLabout}>
-        <Route path="/about"   page={AboutPage}   name="about" />
-        <Route path="/contact" page={ContactPage} name="contact" />
-        <Route path="/forum"   page={ForumPage}   name="forum" />
-        <Route path="/"        page={HomePage}    name="home" />
-        <Route notfound        page={NotFoundPage} />
+        <Route path="/about"            page={AboutPage}   name="about" />
+        <Route path="/contact"          page={ContactPage} name="contact" />
+        <Route path="/forum"            page={ForumPage}   name="forum" />
+        <Route path="/thread/{id:Int}"  page={ThreadPage}  name="thread" />
+        <Route path="/thread/new"       page={ThreadNewThreadPage}  name="newThread" />
+        <Route path="/"                 page={HomePage}    name="home" />
+        <Route notfound                 page={NotFoundPage} />
       </Set>
 
-      <Set wrap={ForumLabout} title="Threads" titleTo="threads" buttonLabel="New Thread" buttonTo="newThread">
+      {/* <Set wrap={ForumLabout} title="Threads" titleTo="threads" buttonLabel="New Thread" buttonTo="newThread">
         <Route path="/threads/new"           page={ThreadNewThreadPage}  name="newThread" />
         <Route path="/threads/{id:Int}/edit" page={ThreadEditThreadPage} name="editThread" />
         <Route path="/threads/{id:Int}"      page={ThreadThreadPage}     name="thread" />
         <Route path="/threads"               page={ThreadThreadsPage}    name="threads" />
-      </Set>
+      </Set> */}
 
     </Router>
   )
