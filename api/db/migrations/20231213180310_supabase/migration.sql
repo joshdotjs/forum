@@ -9,16 +9,6 @@ CREATE TABLE "Post" (
 );
 
 -- CreateTable
-CREATE TABLE "Place" (
-    "id" SERIAL NOT NULL,
-    "price" TEXT NOT NULL,
-    "address" TEXT NOT NULL,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-
-    CONSTRAINT "Place_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
 CREATE TABLE "Contact" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,

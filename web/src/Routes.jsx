@@ -6,6 +6,7 @@ import { useAuth } from './auth'
 const Routes = () => {
   return (
     <Router useAuth={useAuth}>
+
       <Route path="/login" page={LoginPage} name="login" />
       <Route path="/signup" page={SignupPage} name="signup" />
       <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
@@ -13,13 +14,7 @@ const Routes = () => {
 
       <Route path="/article/{id:Int}" page={ArticlePage} name="article" />
 
-      <Set wrap={ScaffoldLayout} title="Places" titleTo="places" buttonLabel="New Place" buttonTo="newPlace">
-        <Route path="/places/new" page={PlaceNewPlacePage} name="newPlace" />
-        <Route path="/places/{id:Int}/edit" page={PlaceEditPlacePage} name="editPlace" />
-        <Route path="/places/{id:Int}" page={PlacePlacePage} name="place" />
-        <Route path="/places" page={PlacePlacesPage} name="places" />
-      </Set>
-
+      {/* TODO: RBAC / authorization to only allow current user to edit their own posts */}
       <PrivateSet unauthenticated='home' roles="admin">
         <Set wrap={ScaffoldLayout} title="Posts" titleTo="posts" buttonLabel="New Post" buttonTo="newPost">
           <Route path="/admin/posts/new" page={PostNewPostPage} name="newPost" />
@@ -35,6 +30,14 @@ const Routes = () => {
         <Route path="/" page={HomePage} name="home" />
         <Route notfound page={NotFoundPage} />
       </Set>
+
+      <Set wrap={ScaffoldLayout} title="Threads" titleTo="threads" buttonLabel="New Thread" buttonTo="newThread">
+        <Route path="/threads/new" page={ThreadNewThreadPage} name="newThread" />
+        <Route path="/threads/{id:Int}/edit" page={ThreadEditThreadPage} name="editThread" />
+        <Route path="/threads/{id:Int}" page={ThreadThreadPage} name="thread" />
+        <Route path="/threads" page={ThreadThreadsPage} name="threads" />
+      </Set>
+
     </Router>
   )
 }
