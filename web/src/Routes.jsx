@@ -10,7 +10,6 @@
 import { Router, Route, Set, PrivateSet } from '@redwoodjs/router'
 
 import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
-import BlogLayout from 'src/layouts/BlogLayout/BlogLayout'
 import ForumLabout from 'src/layouts/ForumLayout/ForumLayout'
 
 import { useAuth } from './auth'
@@ -18,9 +17,6 @@ import { useAuth } from './auth'
 const Routes = () => {
   return (
     <Router useAuth={useAuth}>
-
-
-
       <Route path="/login" page={LoginPage} name="login" />
       <Route path="/signup" page={SignupPage} name="signup" />
       <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
@@ -44,14 +40,12 @@ const Routes = () => {
         </Set>
       </PrivateSet>
 
-      {/* <Set wrap={BlogLayout}> */}
       <Set wrap={ForumLabout}>
         <Route path="/about" page={AboutPage} name="about" />
         <Route path="/contact" page={ContactPage} name="contact" />
         <Route path="/" page={HomePage} name="home" />
         <Route notfound page={NotFoundPage} />
       </Set>
-      {/* </Set> */}
     </Router>
   )
 }
