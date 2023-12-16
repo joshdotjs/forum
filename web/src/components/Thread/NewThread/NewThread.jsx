@@ -1,6 +1,7 @@
 import { navigate, routes } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
+import { useAuth } from 'src/auth'
 
 import ThreadForm from 'src/components/Thread/ThreadForm'
 
@@ -13,6 +14,9 @@ const CREATE_THREAD_MUTATION = gql`
 `
 
 const NewThread = () => {
+
+  const { isAuthenticated, currentUser, logOut } = useAuth()
+
   const [createThread, { loading, error }] = useMutation(
     CREATE_THREAD_MUTATION,
     {
@@ -27,7 +31,11 @@ const NewThread = () => {
   )
 
   const onSave = (input) => {
-    createThread({ variables: { input } })
+    // console.log('input: ', input);
+    // console.log('current user id: ', currentUser.id);
+    // debugger;
+
+    createThread({ variables: { input: { ...input, userId: currentUser.id} } })
   }
 
   return (
