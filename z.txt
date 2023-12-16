@@ -76,3 +76,9 @@ yarn rw c
 > db.comment.findMany()
 > db.comment.findMany({ where: { postId: 1 }})
 > db.user.update({ where: { id: 1 } , data: { roles: 'admin' } })
+
+-------------------------------------------------
+
+post    -> post   |   article -> ???
+comment -> comment
+blog    -> forum (layout)
