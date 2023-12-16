@@ -7,35 +7,36 @@ const Routes = () => {
   return (
     <Router useAuth={useAuth}>
 
-      <Route path="/login" page={LoginPage} name="login" />
-      <Route path="/signup" page={SignupPage} name="signup" />
+      <Route path="/login"           page={LoginPage}          name="login" />
+      <Route path="/signup"          page={SignupPage}         name="signup" />
       <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
-      <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
+      <Route path="/reset-password"  page={ResetPasswordPage}  name="resetPassword" />
 
       <Route path="/article/{id:Int}" page={ArticlePage} name="article" />
 
       {/* TODO: RBAC / authorization to only allow current user to edit their own posts */}
       <PrivateSet unauthenticated='home' roles="admin">
         <Set wrap={ScaffoldLayout} title="Posts" titleTo="posts" buttonLabel="New Post" buttonTo="newPost">
-          <Route path="/admin/posts/new" page={PostNewPostPage} name="newPost" />
+          <Route path="/admin/posts/new"           page={PostNewPostPage}  name="newPost" />
           <Route path="/admin/posts/{id:Int}/edit" page={PostEditPostPage} name="editPost" />
-          <Route path="/admin/posts/{id:Int}" page={PostPostPage} name="post" />
-          <Route path="/admin/posts" page={PostPostsPage} name="posts" />
+          <Route path="/admin/posts/{id:Int}"      page={PostPostPage}     name="post" />
+          <Route path="/admin/posts"               page={PostPostsPage}    name="posts" />
         </Set>
       </PrivateSet>
 
       <Set wrap={ForumLabout}>
-        <Route path="/about" page={AboutPage} name="about" />
+        <Route path="/about"   page={AboutPage}   name="about" />
         <Route path="/contact" page={ContactPage} name="contact" />
-        <Route path="/" page={HomePage} name="home" />
-        <Route notfound page={NotFoundPage} />
+        <Route path="/forum"   page={ForumPage}   name="forum" />
+        <Route path="/"        page={HomePage}    name="home" />
+        <Route notfound        page={NotFoundPage} />
       </Set>
 
-      <Set wrap={ScaffoldLayout} title="Threads" titleTo="threads" buttonLabel="New Thread" buttonTo="newThread">
-        <Route path="/threads/new" page={ThreadNewThreadPage} name="newThread" />
+      <Set wrap={ForumLabout} title="Threads" titleTo="threads" buttonLabel="New Thread" buttonTo="newThread">
+        <Route path="/threads/new"           page={ThreadNewThreadPage}  name="newThread" />
         <Route path="/threads/{id:Int}/edit" page={ThreadEditThreadPage} name="editThread" />
-        <Route path="/threads/{id:Int}" page={ThreadThreadPage} name="thread" />
-        <Route path="/threads" page={ThreadThreadsPage} name="threads" />
+        <Route path="/threads/{id:Int}"      page={ThreadThreadPage}     name="thread" />
+        <Route path="/threads"               page={ThreadThreadsPage}    name="threads" />
       </Set>
 
     </Router>
