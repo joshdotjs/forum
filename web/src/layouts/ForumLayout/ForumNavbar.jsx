@@ -22,6 +22,7 @@ export default function Navbar() {
 
   const navigation = [
     { name: 'Home',    fn: () => routes.home()    },
+    { name: 'Forum',   fn: () => routes.forum()   },
     { name: 'About',   fn: () => routes.about()   },
     { name: 'Contact', fn: () => routes.contact() },
   ]
@@ -73,13 +74,14 @@ export default function Navbar() {
               {isAuthenticated ? (
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
-                    <button
+                    <Link
+                      to={routes.newThread()}
                       type="button"
                       className="relative inline-flex items-center gap-x-1.5 rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                     >
                       <PlusIcon className="-ml-0.5 h-5 w-5" aria-hidden="true" />
                       New Thread
-                    </button>
+                    </Link>
                   </div>
                   <div className="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
                     <button
