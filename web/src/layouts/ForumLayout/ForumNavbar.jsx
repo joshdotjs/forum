@@ -70,8 +70,6 @@ export default function Navbar() {
               </div>
 
 
-
-
               {isAuthenticated ? (
                 <div className="flex items-center">
                   <div className="flex-shrink-0">

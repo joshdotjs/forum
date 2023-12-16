@@ -7,5 +7,23 @@
   },
   "[prisma]": {
     "editor.formatOnSave": true
+  },
+  "files.exclude": {
+    ".yarn": true,
+    "yarn.lock": true,
+    ".yarnrc.yml": true,
+    ".redwood": true,
+    "**/node_modules": true,
+    ".env.defaults": true,
+    ".env.example": true,
+    ".nvmrc": true,
+    ".editorconfig": true,
+    "graphql.config.js": true,
+    "prettier.config.js": true,
+    "redwood.toml": true,
+    "**/jest.config.js": true,
+    "web/vite.config.js": true,
+    "web/jsconfig.json": true,
+    "api/dist": true,
   }
 }
