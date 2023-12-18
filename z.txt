@@ -88,3 +88,9 @@ blog    -> forum (layout)
 Chapter 7.B: Accessing currentUser in the API side
 
 yarn rw g sdl User --no-crud
+
+
+Reset, migrate, seed:
+> yarn rw prisma migrate reset
+> yarn rw prisma migrate dev
+> yarn rw prisma db seed
