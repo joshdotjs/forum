@@ -34,12 +34,12 @@ const Routes = () => {
         <Route notfound                 page={NotFoundPage} />
       </Set>
 
-      {/* <Set wrap={ForumLabout} title="Threads" titleTo="threads" buttonLabel="New Thread" buttonTo="newThread">
+      <Set wrap={ForumLabout} title="Threads" titleTo="threads" buttonLabel="New Thread" buttonTo="newThread">
         <Route path="/threads/new"           page={ThreadNewThreadPage}  name="newThread" />
         <Route path="/threads/{id:Int}/edit" page={ThreadEditThreadPage} name="editThread" />
-        <Route path="/threads/{id:Int}"      page={ThreadThreadPage}     name="thread" />
+        {/* <Route path="/threads/{id:Int}"      page={ThreadThreadPage}     name="thread" /> */}
         <Route path="/threads"               page={ThreadThreadsPage}    name="threads" />
-      </Set> */}
+      </Set>
 
     </Router>
   )

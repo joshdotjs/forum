@@ -71,7 +71,7 @@ const team = [
 const benefits = [
   'Anyone can contribute',
   'Just submit a pull request',
-  'Contact if you can\t code',
+  'Contact if you can\'t code',
   'Free coding lessons',
 ]
 const footerNavigation = {

@@ -14,11 +14,13 @@
 - **jest**
 ```yarn rw test```
 ```p > <comp-name> > [down arrow] > [enter]```
+- ***graphQL***
+```http://localhost:8911/graphql```
 
 ## node modules
-```yarn workspace web add <module-name>```
-```yarn workspace api add <module-name>```
-```yarn -W add <module-name> (adds to outer package.json)```
+- ```yarn workspace web add <module-name>```
+- ```yarn workspace api add <module-name>```
+- ```yarn -W add <module-name> (adds to outer package.json)```
 
 
 ## generators
@@ -34,12 +36,12 @@
 ```yarn g cell <cell-name>```
 
 ## tailwind
-```yarn rw setup ui tailwindcss```
+- ```yarn rw setup ui tailwindcss```
 
 ## deploy:
-```yarn rw setup deploy vercel```
-```yarn rw prisma migrate dev```
-```commit / push```
+- ```yarn rw setup deploy vercel```
+- ```yarn rw prisma migrate dev```
+- ```commit / push```
 
 ## DB:
 - **migrate**

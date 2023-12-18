@@ -82,3 +82,9 @@ yarn rw c
 post    -> post   |   article -> ???
 comment -> comment
 blog    -> forum (layout)
+
+-------------------------------------------------
+
+Chapter 7.B: Accessing currentUser in the API side
+
+yarn rw g sdl User --no-crud

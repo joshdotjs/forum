@@ -1,4 +1,4 @@
-import Thread from 'src/components/Thread/Thread'
+import ThreadComp from 'src/components/ThreadComp/ThreadComp'
 
 export const QUERY = gql`
   query FindThreadById($id: Int!) {
@@ -21,5 +21,5 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ thread }) => {
-  return <Thread thread={thread} />
+  return <ThreadComp thread={thread} />
 }

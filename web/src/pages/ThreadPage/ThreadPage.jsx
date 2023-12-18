@@ -1,16 +1,11 @@
-import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
+import ThreadCell from 'src/components/Thread/ThreadCell'
 
 const ThreadPage = ({ id }) => {
   return (
     <>
       <MetaTags title="Thread" description="Thread page" />
-
-      <h1>ThreadPage</h1>
-      <p>
-        Thread ID: {id}
-      </p>
-
+      <ThreadCell id={id} />
     </>
   )
 }

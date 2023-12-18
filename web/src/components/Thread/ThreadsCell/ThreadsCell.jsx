@@ -3,6 +3,11 @@ import Threads from 'src/components/Thread/Threads'
 import { PlusIcon } from '@heroicons/react/20/solid'
 import { useAuth } from 'src/auth'
 
+const truncate = (text, length) => {
+  if (text.length <= length) return text
+  return text.substring(0, length) + '...'
+}
+
 export const QUERY = gql`
   query FindThreads {
     threads {
@@ -101,9 +106,9 @@ export const Success = ({ threads }) => {
                         return (
                         <tr key={key}>
                           <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-0">
-                            {thread.title}
+                            {truncate(thread.title, 32)}
                           </td>
-                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-300">{thread.body}</td>
+                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-300">{truncate(thread.body, 32)}</td>
                           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-300">{thread.userId}</td>
                           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-300">{thread.createdAt}</td>
                           <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
