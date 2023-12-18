@@ -1,4 +1,5 @@
 import { db } from 'api/src/lib/db'
+import { hashPassword } from '@redwoodjs/auth-dbauth-api'
 
 const POSTS = [
   {
@@ -11,13 +12,13 @@ const POSTS = [
     id: 2,
     title: 'A little more about me',
     body: "Raclette shoreditch before they sold out lyft. Ethical bicycle rights meh prism twee. Tote bag ennui vice, slow-carb taiyaki crucifix whatever you probably haven't heard of them jianbing raw denim DIY hot chicken. Chillwave blog succulents freegan synth af ramps poutine wayfarers yr seitan roof party squid. Jianbing flexitarian gentrify hexagon portland single-origin coffee raclette gluten-free. Coloring book cloud bread street art kitsch lumbersexual af distillery ethical ugh thundercats roof party poke chillwave. 90's palo santo green juice subway tile, prism viral butcher selvage etsy pitchfork sriracha tumeric bushwick.",
-    userId: 1,
+    userId: 2,
   },
   {
     id: 3,
     title: 'What is the meaning of life?',
     body: 'Meh waistcoat succulents umami asymmetrical, hoodie post-ironic paleo chillwave tote bag. Trust fund kitsch waistcoat vape, cray offal gochujang food truck cloud bread enamel pin forage. Roof party chambray ugh occupy fam stumptown. Dreamcatcher tousled snackwave, typewriter lyft unicorn pabst portland blue bottle locavore squid PBR&B tattooed.',
-    userId: 1,
+    userId: 3,
   },
 ]
 
@@ -81,18 +82,37 @@ export default async () => {
 
 
     // create an admin user
-    await db.user.upsert({
-      where: { id: 1 },
-      create: {
-        id: 1,
-        name: 'John Doe',
-        email: 'admin@admin.com',
-        hashedPassword:
-          'ad9563042fe9f154419361eeeb775d8a12f3975a3722953fd8e326dd108d5645',
-        salt: '1c99de412b219e9abf4665293211adce',
-      },
-      update: {},
-    })
+    // await db.user.upsert({
+    //   where: { id: 1 },
+    //   create: {
+    //     id: 1,
+    //     name: 'Admin Doe',
+    //     email: 'admin@admin.com',
+    //     hashedPassword:
+    //       'ad9563042fe9f154419361eeeb775d8a12f3975a3722953fd8e326dd108d5645',
+    //     salt: '1c99de412b219e9abf4665293211adce',
+    //     roles: 'admin',
+    //   },
+    //   update: {},
+    // })
+    const users = [
+      { name: 'admin doe',     email: 'admin@admin.com', password: 'admin', roles: 'admin'     },
+      { name: 'moderator doe', email: 'mod@mod.com',     password: 'mod'  , roles: 'moderator' },
+      { name: 'user doe',      email: 'user@user.com',   password: 'user' , roles: 'user'      }
+    ]
+
+    for (const user of users) {
+      const [hashedPassword, salt] = hashPassword(user.password)
+      await db.user.create({
+        data: {
+          name: user.name,
+          email: user.email,
+          roles: user.roles,
+          hashedPassword,
+          salt,
+        }
+      })
+    }
 
     for (const post of POSTS) {
       await db.post.upsert({

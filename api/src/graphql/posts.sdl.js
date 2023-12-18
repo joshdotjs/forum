@@ -8,23 +8,7 @@ export const schema = gql`
   }
 
   type Query {
-    posts: [Post!]! @skipAuth #@requireAuth
-    post(id: Int!): Post @skipAuth #@requireAuth
-  }
-
-  input CreatePostInput {
-    title: String!
-    body: String!
-  }
-
-  input UpdatePostInput {
-    title: String
-    body: String
-  }
-
-  type Mutation {
-    createPost(input: CreatePostInput!): Post! @requireAuth
-    updatePost(id: Int!, input: UpdatePostInput!): Post! @requireAuth
-    deletePost(id: Int!): Post! @requireAuth
+    posts: [Post!]! @skipAuth
+    post(id: Int!): Post @skipAuth
   }
 `
