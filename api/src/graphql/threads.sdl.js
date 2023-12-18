@@ -8,8 +8,8 @@ export const schema = gql`
   }
 
   type Query {
-    threads: [Thread!]! @requireAuth
-    thread(id: Int!): Thread @requireAuth
+    threads: [Thread!]! @skipAuth
+    thread(id: Int!): Thread @skipAuth
   }
 
   input CreateThreadInput {

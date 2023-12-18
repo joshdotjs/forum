@@ -27,10 +27,10 @@ const Routes = () => {
       <Set wrap={ForumLabout}>
         <Route path="/about"            page={AboutPage}   name="about" />
         <Route path="/contact"          page={ContactPage} name="contact" />
-        <Route path="/forum"            page={ForumPage}   name="forum" />
+        <Route path="/"                 page={ForumPage}   name="forum" />
         <Route path="/thread/{id:Int}"  page={ThreadPage}  name="thread" />
         <Route path="/thread/new"       page={ThreadNewThreadPage}  name="newThread" />
-        <Route path="/"                 page={HomePage}    name="home" />
+        <Route path="/blog"             page={HomePage}    name="blog" />
         <Route notfound                 page={NotFoundPage} />
       </Set>
 
