@@ -1,6 +1,7 @@
 import { Link, routes } from '@redwoodjs/router'
 import Threads from 'src/components/Thread/Threads'
 import { PlusIcon } from '@heroicons/react/20/solid'
+import { useAuth } from 'src/auth'
 
 export const QUERY = gql`
   query FindThreads {
@@ -40,6 +41,10 @@ const people = [
 
 export const Success = ({ threads }) => {
   // return <Threads threads={threads} />
+
+
+  const { isAuthenticated, currentUser, logOut } = useAuth()
+
   return (
     <div className="bg-gray-900">
       <div className="mx-auto max-w-7xl">
@@ -54,6 +59,7 @@ export const Success = ({ threads }) => {
               </div>
               <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
 
+                 {isAuthenticated &&
                     <Link
                       to={routes.newThread()}
                       type="button"
@@ -62,6 +68,7 @@ export const Success = ({ threads }) => {
                       <PlusIcon className="-ml-0.5 h-5 w-5" aria-hidden="true" />
                       New Thread
                     </Link>
+                 }
 
               </div>
             </div>

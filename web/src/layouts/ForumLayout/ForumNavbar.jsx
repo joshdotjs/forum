@@ -20,7 +20,7 @@ export default function Navbar() {
   const { isAuthenticated, currentUser, logOut } = useAuth()
 
   const navigation = [
-    { name: 'Forum',   fn: () => routes.forum()   },
+    { name: 'Forum',   fn: () => routes.home()   },
     { name: 'Blog',    fn: () => routes.blog()    },
     { name: 'About',   fn: () => routes.about()   },
     { name: 'Contact', fn: () => routes.contact() },
