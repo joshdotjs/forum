@@ -270,7 +270,7 @@ function Page() {
         </div>
 
         {/* Team section */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
+        {/* <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Our team</h2>
             <p className="mt-6 text-lg leading-8 text-gray-300">
@@ -290,7 +290,7 @@ function Page() {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
 
         {/* CTA section */}
         <div className="relative isolate -z-10 mt-32 sm:mt-40">

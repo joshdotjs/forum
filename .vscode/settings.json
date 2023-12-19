@@ -9,6 +9,8 @@
     "editor.formatOnSave": true
   },
   "files.exclude": {
+    ".gitignore": true,
+    "**/package.json": true,
     ".yarn": true,
     "yarn.lock": true,
     ".yarnrc.yml": true,
@@ -23,7 +25,14 @@
     "redwood.toml": true,
     "**/jest.config.js": true,
     "web/vite.config.js": true,
-    "web/jsconfig.json": true,
+    "**/jsconfig.json": true,
     "api/dist": true,
+    "api/server.config.js": true,
+    "**/.keep": true,
+    "**/types": true,
+    "web/config": true,
+    "web/src/index.html": true,
+    "web/src/App.jsx": true,
+    "web/src/entry.client.jsx": true,
   }
 }
