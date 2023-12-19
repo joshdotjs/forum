@@ -3309,12 +3309,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@heroicons/react@npm:^2.0.18":
-  version: 2.0.18
-  resolution: "@heroicons/react@npm:2.0.18"
+"@heroicons/react@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@heroicons/react@npm:2.1.1"
   peerDependencies:
     react: ">= 16"
-  checksum: 3cef7f67c65f8b00dc4f23788e468e661a24bd805f80e3b5514a986d69c91ef05407cf50078691573eced47147db87a9bd00cc165e4fecd2a9657cbaf3eaafb5
+  checksum: c85f76d4ccb5bdad9e6ffaa62bfdcde1c1f9ebaf3287908a7be0994c2d0f6151b9017f6e41d0a1ec9ba1eb1c53ab88f30704b0d25c72adc59896882b0a60147e
   languageName: node
   linkType: hard
 
@@ -23937,7 +23937,7 @@ __metadata:
   resolution: "web@workspace:web"
   dependencies:
     "@headlessui/react": ^1.7.17
-    "@heroicons/react": ^2.0.18
+    "@heroicons/react": ^2.1.1
     "@redwoodjs/auth-dbauth-web": 6.4.0
     "@redwoodjs/forms": 6.4.0
     "@redwoodjs/router": 6.4.0

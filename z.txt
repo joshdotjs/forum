@@ -94,3 +94,11 @@ Reset, migrate, seed:
 > yarn rw prisma migrate reset
 > yarn rw prisma migrate dev
 > yarn rw prisma db seed
+
+-------------------------------------------------
+
+TODO:
+- Thread details page (/thread/{id})
+  -- add comment button
+  -- display user for reply
+- Assign user when a new reply is created
