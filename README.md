@@ -46,6 +46,9 @@
 ## DB:
 - **migrate**
 ```yarn rw prisma migrate dev```
+- **seed**
+```yarn rw prisma db seed```
+- **reset**
+```yarn rw prisma migrate reset```
 - **supabase**
 ```supabase -> Settings -> Database -> Connection String -> URI -> DATABASE_URL in .env```
-

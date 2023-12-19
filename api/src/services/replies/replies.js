@@ -9,6 +9,11 @@ export const reply = ({ id }) => {
     where: { id },
   })
 }
+export const createRelpy = ({ input }) => {
+  return db.reply.create({
+    data: input,
+  });
+}
 
 export const Reply = {
   thread: (_obj, { root }) => {

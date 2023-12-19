@@ -70,6 +70,7 @@ model Reply {
   thread    Thread   @relation(fields: [threadId], references: [id])
   threadId  Int
   createdAt DateTime @default(now())
+  // TODO: add in the user id
 }
 
 // ==============================================
