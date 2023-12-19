@@ -20,4 +20,9 @@ export const schema = gql`
     body: String
     threadId: Int
   }
+
+  type Mutation {
+    createReply(input: CreateReplyInput!): Comment! @skipAuth
+    deleteReply(id: Int!): Reply! @requireAuth
+  }
 `

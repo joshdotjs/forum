@@ -14,6 +14,11 @@ export const createRelpy = ({ input }) => {
     data: input,
   });
 }
+export const deleteReply = ({ id }) => {
+  return db.reply.delete({
+    where: { id },
+  })
+}
 
 export const Reply = {
   thread: (_obj, { root }) => {

@@ -1,4 +1,4 @@
-import Reply from 'src/components/Reply'
+import Entry from 'src/components/Entry/Entry'
 
 export const QUERY = gql`
   query RepliesQuery {
@@ -20,10 +20,8 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ replies }) => {
   return (
-    <ul>
-      {replies.map((item) => {
-        return <li key={item.id}>{JSON.stringify(item)}</li>
-      })}
-    </ul>
+    replies.map((reply) => {
+      return <Entry key={reply.id} entry={reply} />
+    })
   )
 }

@@ -10,8 +10,8 @@
 //
 // See https://storybook.js.org/docs/react/writing-stories/args.
 
-import ThreadComp from './ThreadComp'
+import Entry from './Entry'
 
-export default { component: ThreadComp }
+export default { component: Entry }
 
 export const Primary = {}

@@ -1,14 +1,14 @@
 import { render } from '@redwoodjs/testing/web'
 
-import ThreadComp from './ThreadComp'
+import Entry from './Entry'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
 
-describe('ThreadComp', () => {
+describe('Entry', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<ThreadComp />)
+      render(<Entry />)
     }).not.toThrow()
   })
 })
