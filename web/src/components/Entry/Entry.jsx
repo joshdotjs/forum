@@ -11,7 +11,7 @@ const Entry = ({ entry }) => {
     >
 
       {/* <p>{JSON.stringify(entry)}</p> */}
-      <p style={{ border: 'solid black 1px', padding: '0.5rem', gridRow: '1 / -1' }}><b>User:</b>  {entry.name}</p>
+      <p style={{ border: 'solid black 1px', padding: '0.5rem', gridRow: '1 / -1' }}><b>User:</b>  {entry.user?.name}</p>
       <div style={{ border: 'solid black 1px', padding: '0.5rem' }}>
         {entry?.title && <p style={{ border: 'solid black 1px', padding: '0.5rem' }}><b>Title:</b> {entry.title}</p> }
         <p style={{ border: 'solid black 1px', padding: '0.5rem' }}><b>CreatedAt:</b>  {entry.createdAt}</p>
