@@ -9,7 +9,10 @@ export const reply = ({ id }) => {
     where: { id },
   })
 }
-export const createRelpy = ({ input }) => {
+export const createReply = ({ input }) => {
+
+  console.log('/api/src/services/replies/createReply({ input }) -- input: ', input);
+
   return db.reply.create({
     data: input,
   });

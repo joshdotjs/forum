@@ -172,15 +172,15 @@ export default async () => {
       const msg = `  Seeded "${thread.title}"`
       console.log(msg)
     }
-    for (const reply of REPLIES) {
-      await db.reply.upsert({
-        where: { id: reply.id },
-        create: { ...reply },
-        update: {},
-      })
-      const msg = `  Seeded "reply ID: ${reply.id}"`
-      console.log(msg)
-    }
+    // for (const reply of REPLIES) {
+    //   await db.reply.upsert({
+    //     where: { id: reply.id },
+    //     create: { ...reply },
+    //     update: {},
+    //   })
+    //   const msg = `  Seeded "reply ID: ${reply.id}"`
+    //   console.log(msg)
+    // }
 
     console.info('')
     console.info('  Seeded admin user:')

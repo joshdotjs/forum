@@ -22,7 +22,7 @@ export const schema = gql`
   }
 
   type Mutation {
-    createReply(input: CreateReplyInput!): Comment! @skipAuth
+    createReply(input: CreateReplyInput!): Reply! @skipAuth
     deleteReply(id: Int!): Reply! @requireAuth
   }
 `
