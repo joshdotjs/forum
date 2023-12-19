@@ -28,3 +28,8 @@ export const deleteThread = ({ id }) => {
     where: { id },
   })
 }
+
+export const Thread = {
+  user: (_obj, { root }) =>
+    db.thread.findFirst({ where: { id: root.id } }).user(),
+}
