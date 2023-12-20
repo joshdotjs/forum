@@ -1,5 +1,6 @@
-import { Fragment } from 'react'
+import { useState, Fragment, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+import { toast } from '@redwoodjs/web/toast'
 import {
   Form,
   Label,
@@ -24,7 +25,17 @@ const CREATE_MUTATION = gql`
 
 const MainForm = ({ threadId, setOpen }) => {
 
+  // TODO: Add expiry to erase LS after some time
+  const [body, setBody] = useState(localStorage.getItem('body') ?? '');
+  useEffect(() => localStorage.setItem('body', body), [body]);
+
+  const [hasPosted, setHasPosted] = useState(false)
   const [createReply, { loading, error }] = useMutation(CREATE_MUTATION, {
+    onCompleted: () => {
+      setHasPosted(true)
+      toast.success('Your reply has posted!')
+      localStorage.removeItem('body')
+    },
     refetchQueries: [{ query: REPLIES_QUERY }],
   })
 
@@ -52,6 +63,12 @@ const MainForm = ({ threadId, setOpen }) => {
         name="body"
         className="block w-full p-1 border rounded h-24 text-xs mb-6"
         validation={{ required: true }}
+
+        // -below is only used to allow the modal to be closed
+        //  and when it is opened back up the text is still there.
+        // -this is in case the user accidentally closes the modal.
+        onChange={(e) => setBody(e.target.value)}
+        value={body}
       />
 
       <div className="flex">
@@ -65,11 +82,10 @@ const MainForm = ({ threadId, setOpen }) => {
         </Submit>
       </div>
     </Form>
-  );
-};
+  )
+}
 
 export default function EntryModal({ threadId, open, setOpen }) {
-
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
@@ -117,4 +133,3 @@ export default function EntryModal({ threadId, open, setOpen }) {
     </Transition.Root>
   )
 }
-
