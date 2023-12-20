@@ -1,8 +1,8 @@
 import Entry from 'src/components/Entry/Entry'
 
 export const QUERY = gql`
-  query RepliesQuery {
-    replies {
+  query RepliesQuery($threadId: Int!) {
+    replies(threadId: $threadId) {
       id
       body
       createdAt
@@ -21,7 +21,8 @@ export const Failure = ({ error }) => (
 export const Success = ({ replies }) => {
   return (
     replies.map((reply) => {
-      return <Entry key={reply.id} entry={reply} />
+      const key = `reply-${reply.id}}`;
+      return <Entry key={key} entry={reply} />
     })
   )
 }

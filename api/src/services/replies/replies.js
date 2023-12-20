@@ -1,7 +1,7 @@
 import { db } from 'src/lib/db'
 
-export const replies = () => {
-  return db.reply.findMany()
+export const replies = ({ threadId }) => {
+  return db.reply.findMany({ where: { threadId } })
 }
 
 export const reply = ({ id }) => {

@@ -8,7 +8,7 @@ export const schema = gql`
   }
 
   type Query {
-    replies: [Reply!]! @skipAuth
+    replies(threadId: Int!): [Reply!]! @skipAuth
   }
 
   input CreateReplyInput {

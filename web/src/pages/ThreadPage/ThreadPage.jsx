@@ -21,7 +21,7 @@ const ThreadPage = ({ id }) => {
       </Button>
       <ReplyModal threadId={id} {...{ open, setOpen }} />
       <ThreadCell id={id} />
-      <RepliesCell />
+      <RepliesCell threadId={id} />
     </Container>
   )
 }

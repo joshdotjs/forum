@@ -36,7 +36,10 @@ const MainForm = ({ threadId, setOpen }) => {
       toast.success('Your reply has posted!')
       localStorage.removeItem('body')
     },
-    refetchQueries: [{ query: REPLIES_QUERY }],
+    refetchQueries: [{
+      query: REPLIES_QUERY,
+      variables: { threadId },
+    }],
   })
 
   const onSubmit = (input) => {
