@@ -9,8 +9,10 @@ import {
   TextAreaField,
 } from '@redwoodjs/forms'
 import { useMutation } from '@redwoodjs/web'
+import Button from 'src/components/Button/Button'
 
-const CREATE = gql`
+import { QUERY as REPLIES_QUERY } from 'src/components/RepliesCell/RepliesCell'
+const CREATE_MUTATION = gql`
   mutation CreateReplyMutation($input: CreateReplyInput!) {
     createReply(input: $input) {
       id
@@ -22,7 +24,9 @@ const CREATE = gql`
 
 const MainForm = ({ threadId, setOpen }) => {
 
-  const [createReply, { loading, error }] = useMutation(CREATE)
+  const [createReply, { loading, error }] = useMutation(CREATE_MUTATION, {
+    refetchQueries: [{ query: REPLIES_QUERY }],
+  })
 
   const onSubmit = (input) => {
 
@@ -50,13 +54,16 @@ const MainForm = ({ threadId, setOpen }) => {
         validation={{ required: true }}
       />
 
-      <Submit
-        disabled={loading}
-        className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-        onClick={() => setOpen(false)}
-      >
-        Create Reply
-      </Submit>
+      <div className="flex">
+        <Button className="mr-2" onClick={() => setOpen(false)}>Cancel</Button>
+        <Submit
+          disabled={loading}
+          className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          onClick={() => setOpen(false)}
+        >
+          Create Reply
+        </Submit>
+      </div>
     </Form>
   );
 };
@@ -65,7 +72,17 @@ export default function EntryModal({ threadId, open, setOpen }) {
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={setOpen}>
+      <Dialog
+        as="div"
+        // static={true}
+        className="relative z-10"
+        // onClose={setOpen}
+        onClose={(value) => {
+          if (value === true) {
+            setOpen(false);
+          }
+        }}
+      >
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"

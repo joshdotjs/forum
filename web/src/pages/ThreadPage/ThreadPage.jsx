@@ -11,7 +11,7 @@ const Container = ({ children }) => (
 
 const ThreadPage = ({ id }) => {
 
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
 
   return (
     <Container>
