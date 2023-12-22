@@ -2,6 +2,9 @@ import { Link, routes } from '@redwoodjs/router'
 import Threads from 'src/components/Thread/Threads'
 import { PlusIcon } from '@heroicons/react/20/solid'
 import { useAuth } from 'src/auth'
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import img from './adobe-loading-animation--rounded-7dot-5px--dark.json';
+
 
 const truncate = (text, length) => {
   if (text.length <= length) return text
@@ -20,7 +23,26 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => (
+  <div>
+    Loading...
+    <Player
+      autoplay
+      loop
+      src={img}
+      style={{
+        height: '300px',
+        width: '300px',
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)'
+      }}
+    >
+      <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+    </Player>
+  </div>
+)
 
 export const Empty = () => {
   return (
@@ -38,15 +60,7 @@ export const Failure = ({ error }) => (
 )
 
 
-const people = [
-  { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
-  // More people...
-]
-
-
 export const Success = ({ threads }) => {
-  // return <Threads threads={threads} />
-
 
   const { isAuthenticated, currentUser, logOut } = useAuth()
 
