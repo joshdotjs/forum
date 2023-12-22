@@ -7,10 +7,7 @@ const Routes = () => {
   return (
     <Router useAuth={useAuth}>
 
-      <Route path="/login"           page={LoginPage}          name="login" />
-      <Route path="/signup"          page={SignupPage}         name="signup" />
-      <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
-      <Route path="/reset-password"  page={ResetPasswordPage}  name="resetPassword" />
+
 
       <Route path="/article/{id:Int}" page={ArticlePage} name="article" />
 
@@ -25,21 +22,32 @@ const Routes = () => {
       </PrivateSet>
 
       <Set wrap={ForumLabout}>
+
+        {/* main pages */}
         <Route path="/about"            page={AboutPage}   name="about" />
         <Route path="/contact"          page={ContactPage} name="contact" />
         <Route path="/"                 page={ForumPage}   name="home" />
         <Route path="/thread/{id:Int}"  page={ThreadPage}  name="thread" />
         <Route path="/thread/new"       page={ThreadNewThreadPage}  name="newThread" />
         <Route path="/blog"             page={HomePage}    name="blog" />
+
+        {/* auth */}
+        <Route path="/login"           page={LoginPage}          name="login" />
+        <Route path="/signup"          page={SignupPage}         name="signup" />
+        <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
+        <Route path="/reset-password"  page={ResetPasswordPage}  name="resetPassword" />
+
         <Route notfound                 page={NotFoundPage} />
       </Set>
 
+      {/*
       <Set wrap={ForumLabout} title="Threads" titleTo="threads" buttonLabel="New Thread" buttonTo="newThread">
         <Route path="/threads/new"           page={ThreadNewThreadPage}  name="newThread" />
         <Route path="/threads/{id:Int}/edit" page={ThreadEditThreadPage} name="editThread" />
-        {/* <Route path="/threads/{id:Int}"      page={ThreadThreadPage}     name="thread" /> */}
+        <Route path="/threads/{id:Int}"      page={ThreadThreadPage}     name="thread" />
         <Route path="/threads"               page={ThreadThreadsPage}    name="threads" />
       </Set>
+      */}
 
     </Router>
   )

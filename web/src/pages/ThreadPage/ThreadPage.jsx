@@ -16,12 +16,12 @@ const ThreadPage = ({ id }) => {
   return (
     <Container>
       <MetaTags title="Thread" description="Thread page" />
-      <Button onClick={() => setOpen(true)}>
-        Add Reply
-      </Button>
       <ReplyModal threadId={id} {...{ open, setOpen }} />
       <ThreadCell id={id} />
       <RepliesCell threadId={id} />
+      <Button onClick={() => setOpen(true)}>
+        Add Reply
+      </Button>
     </Container>
   )
 }
