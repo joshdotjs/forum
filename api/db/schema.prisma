@@ -18,7 +18,7 @@ model User {
   salt                String
   resetToken          String?
   resetTokenExpiresAt DateTime?
-  roles               String    @default("moderator")
+  roles               String    @default("user")
   threads             Thread[]
   posts               Post[]
 }
