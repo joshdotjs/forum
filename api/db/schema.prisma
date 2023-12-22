@@ -21,6 +21,7 @@ model User {
   roles               String    @default("user")
   threads             Thread[]
   posts               Post[]
+  replies             Reply[]
 }
 
 // ==============================================
@@ -65,12 +66,12 @@ model Comment {
 model Reply {
   // COMMENT / THREAD_REPLY
   id        Int      @id @default(autoincrement())
-  // title     String
   body      String
   thread    Thread   @relation(fields: [threadId], references: [id])
   threadId  Int
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
   createdAt DateTime @default(now())
-  // TODO: add in the user id
 }
 
 // ==============================================

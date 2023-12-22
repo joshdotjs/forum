@@ -5,19 +5,19 @@ const POSTS = [
   {
     id: 1,
     title: 'Welcome to the blog!',
-    body: "I'm baby single- origin coffee kickstarter lo - fi paleo skateboard.Tumblr hashtag austin whatever DIY plaid knausgaard fanny pack messenger bag blog next level woke.Ethical bitters fixie freegan,helvetica pitchfork 90's tbh chillwave mustache godard subway tile ramps art party. Hammock sustainable twee yr bushwick disrupt unicorn, before they sold out direct trade chicharrones etsy polaroid hoodie. Gentrify offal hoodie fingerstache.",
+    body: "Welcome to our blog! Here, we share our thoughts on the latest trends in technology, provide useful tips and tutorials, and discuss various topics that we're passionate about. Stay tuned for more updates!",
     userId: 1,
   },
   {
     id: 2,
     title: 'A little more about me',
-    body: "Raclette shoreditch before they sold out lyft. Ethical bicycle rights meh prism twee. Tote bag ennui vice, slow-carb taiyaki crucifix whatever you probably haven't heard of them jianbing raw denim DIY hot chicken. Chillwave blog succulents freegan synth af ramps poutine wayfarers yr seitan roof party squid. Jianbing flexitarian gentrify hexagon portland single-origin coffee raclette gluten-free. Coloring book cloud bread street art kitsch lumbersexual af distillery ethical ugh thundercats roof party poke chillwave. 90's palo santo green juice subway tile, prism viral butcher selvage etsy pitchfork sriracha tumeric bushwick.",
+    body: "Hello, I'm John Doe, a software engineer with a passion for coding and technology. In my free time, I enjoy reading, hiking, and exploring new places. I'm excited to share my experiences and knowledge with you through this blog.",
     userId: 2,
   },
   {
     id: 3,
     title: 'What is the meaning of life?',
-    body: 'Meh waistcoat succulents umami asymmetrical, hoodie post-ironic paleo chillwave tote bag. Trust fund kitsch waistcoat vape, cray offal gochujang food truck cloud bread enamel pin forage. Roof party chambray ugh occupy fam stumptown. Dreamcatcher tousled snackwave, typewriter lyft unicorn pabst portland blue bottle locavore squid PBR&B tattooed.',
+    body: 'The meaning of life is a philosophical question concerning the purpose and significance of life or existence in general. This concept has been approached by many different perspectives, including philosophy, religion, and science. Stay tuned as we explore this topic in depth in our upcoming posts.',
     userId: 3,
   },
 ]
@@ -25,40 +25,40 @@ const THREADS = [
   {
     id: 1,
     title: 'Thread 1',
-    body: "I'm baby single- origin coffee kickstarter lo - fi paleo skateboard.Tumblr hashtag austin whatever DIY plaid knausgaard fanny pack messenger bag blog next level woke.Ethical bitters fixie freegan,helvetica pitchfork 90's tbh chillwave mustache godard subway tile ramps art party. Hammock sustainable twee yr bushwick disrupt unicorn, before they sold out direct trade chicharrones etsy polaroid hoodie. Gentrify offal hoodie fingerstache.",
+    body: "Welcome to our first thread! Here, we discuss the latest trends in technology, provide useful tips and tutorials, and share our thoughts on various topics. Join the conversation and share your thoughts!",
     userId: 1,
   },
   {
     id: 2,
     title: 'Thread 2',
-    body: "Raclette shoreditch before they sold out lyft. Ethical bicycle rights meh prism twee. Tote bag ennui vice, slow-carb taiyaki crucifix whatever you probably haven't heard of them jianbing raw denim DIY hot chicken. Chillwave blog succulents freegan synth af ramps poutine wayfarers yr seitan roof party squid. Jianbing flexitarian gentrify hexagon portland single-origin coffee raclette gluten-free. Coloring book cloud bread street art kitsch lumbersexual af distillery ethical ugh thundercats roof party poke chillwave. 90's palo santo green juice subway tile, prism viral butcher selvage etsy pitchfork sriracha tumeric bushwick.",
+    body: "Hello, I'm John Doe, a software engineer with a passion for coding and technology. In this thread, I'll share my experiences and knowledge with you. Feel free to ask any questions or share your own experiences.",
     userId: 2,
   },
   {
     id: 3,
     title: 'Thread 3',
-    body: 'Meh waistcoat succulents umami asymmetrical, hoodie post-ironic paleo chillwave tote bag. Trust fund kitsch waistcoat vape, cray offal gochujang food truck cloud bread enamel pin forage. Roof party chambray ugh occupy fam stumptown. Dreamcatcher tousled snackwave, typewriter lyft unicorn pabst portland blue bottle locavore squid PBR&B tattooed.',
+    body: 'The meaning of life is a philosophical question concerning the purpose and significance of life or existence in general. This thread is dedicated to discussing this topic from many different perspectives, including philosophy, religion, and science. Join us as we explore this topic in depth.',
     userId: 3,
   },
 ]
 const REPLIES = [
   {
     id: 1,
-    body: "I'm baby single- origin coffee kickstarter lo - fi paleo skateboard.Tumblr hashtag austin whatever DIY plaid knausgaard fanny pack messenger bag blog next level woke.Ethical bitters fixie freegan,helvetica pitchfork 90's tbh chillwave mustache godard subway tile ramps art party. Hammock sustainable twee yr bushwick disrupt unicorn, before they sold out direct trade chicharrones etsy polaroid hoodie. Gentrify offal hoodie fingerstache.",
-    threadId: 1
-    // userId: 1,
+    body: "I totally agree with the latest trends in technology you've mentioned. I've been following them closely and find them very promising. Looking forward to more updates on this thread!",
+    threadId: 1,
+    userId: 1,
   },
   {
     id: 2,
-    body: "Raclette shoreditch before they sold out lyft. Ethical bicycle rights meh prism twee. Tote bag ennui vice, slow-carb taiyaki crucifix whatever you probably haven't heard of them jianbing raw denim DIY hot chicken. Chillwave blog succulents freegan synth af ramps poutine wayfarers yr seitan roof party squid. Jianbing flexitarian gentrify hexagon portland single-origin coffee raclette gluten-free. Coloring book cloud bread street art kitsch lumbersexual af distillery ethical ugh thundercats roof party poke chillwave. 90's palo santo green juice subway tile, prism viral butcher selvage etsy pitchfork sriracha tumeric bushwick.",
+    body: "Hi John Doe, it's great to know more about you. I'm also a software engineer and share similar interests. Looking forward to learning from your experiences and knowledge.",
     threadId: 2,
-    // userId: 2,
+    userId: 2,
   },
   {
     id: 3,
-    body: 'Meh waistcoat succulents umami asymmetrical, hoodie post-ironic paleo chillwave tote bag. Trust fund kitsch waistcoat vape, cray offal gochujang food truck cloud bread enamel pin forage. Roof party chambray ugh occupy fam stumptown. Dreamcatcher tousled snackwave, typewriter lyft unicorn pabst portland blue bottle locavore squid PBR&B tattooed.',
+    body: 'The meaning of life is indeed a deep topic. I believe it varies from person to person and is influenced by our personal experiences, beliefs, and values. Excited to explore this topic further in this thread.',
     threadId: 3,
-    // userId: 3,
+    userId: 3,
   },
 ]
 
@@ -172,15 +172,15 @@ export default async () => {
       const msg = `  Seeded "${thread.title}"`
       console.log(msg)
     }
-    // for (const reply of REPLIES) {
-    //   await db.reply.upsert({
-    //     where: { id: reply.id },
-    //     create: { ...reply },
-    //     update: {},
-    //   })
-    //   const msg = `  Seeded "reply ID: ${reply.id}"`
-    //   console.log(msg)
-    // }
+    for (const reply of REPLIES) {
+      await db.reply.upsert({
+        where: { id: reply.id },
+        create: { ...reply },
+        update: {},
+      })
+      const msg = `  Seeded "reply ID: ${reply.id}"`
+      console.log(msg)
+    }
 
     console.info('')
     console.info('  Seeded admin user:')

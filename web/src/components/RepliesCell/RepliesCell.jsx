@@ -6,6 +6,15 @@ export const QUERY = gql`
       id
       body
       createdAt
+      # thread {
+      #   title
+      #   # user {
+      #   #   name
+      #   # }
+      # }
+      user {
+        name
+      }
     }
   }
 `

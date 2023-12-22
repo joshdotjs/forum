@@ -4,6 +4,8 @@ export const schema = gql`
     body: String!
     thread: Thread!
     threadId: Int!
+    user: User!
+    userId: Int!
     createdAt: DateTime!
   }
 

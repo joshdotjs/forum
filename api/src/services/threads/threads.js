@@ -29,6 +29,7 @@ export const deleteThread = ({ id }) => {
   })
 }
 
+// https://redwoodjs.com/docs/tutorial/chapter7/api-side-currentuser#add-user-relation-resolver
 export const Thread = {
   user: (_obj, { root }) =>
     db.thread.findFirst({ where: { id: root.id } }).user(),
