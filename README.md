@@ -52,3 +52,4 @@
 ```yarn rw prisma migrate reset```
 - **supabase**
 ```supabase -> Settings -> Database -> Connection String -> URI -> DATABASE_URL in .env```
+

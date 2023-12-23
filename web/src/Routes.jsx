@@ -9,7 +9,7 @@ const Routes = () => {
 
 
 
-      <Route path="/article/{id:Int}" page={ArticlePage} name="article" />
+
 
       {/* TODO: RBAC / authorization to only allow current user to edit their own posts */}
       <PrivateSet unauthenticated='home' roles="admin">
@@ -26,10 +26,11 @@ const Routes = () => {
         {/* main pages */}
         <Route path="/about"            page={AboutPage}   name="about" />
         <Route path="/contact"          page={ContactPage} name="contact" />
-        <Route path="/"                 page={ForumPage}   name="home" />
+        {/* <Route path="/"                 page={ForumPage}   name="home" /> */}
+        <Route path="/"                 page={HomePage}   name="home" />
         <Route path="/thread/{id:Int}"  page={ThreadPage}  name="thread" />
         <Route path="/thread/new"       page={ThreadNewThreadPage}  name="newThread" />
-        <Route path="/blog"             page={HomePage}    name="blog" />
+        <Route path="/article/{id:Int}" page={ArticlePage} name="article" />
 
         {/* auth */}
         <Route path="/login"           page={LoginPage}          name="login" />

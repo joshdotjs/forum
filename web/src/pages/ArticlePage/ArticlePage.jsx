@@ -8,12 +8,6 @@ const ArticlePage = ({ id }) => {
     <>
       <MetaTags title="Article" description="Article page" />
 
-      <h1>ArticlePage</h1>
-
-      <p className="text-blue-500 underline">
-        <Link to={routes.article({ id })}>Article id: {id}</Link>`
-      </p>
-
       <ArticleCell id={id} />
     </>
   )
