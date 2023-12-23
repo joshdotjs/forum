@@ -144,15 +144,27 @@ export default function Navbar() {
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
-                  as="a"
-                  href={item.href}
+                  as="div"
+                  // href={item.fn()}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium cursor-pointer'
                   )}
                   aria-current={item.current ? 'page' : undefined}
                 >
-                  {item.name}
+                  <NavLink
+                    to={item.fn()}
+                    className={
+                      classNames(
+                        'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        'block rounded-md text-base font-medium cursor-pointer'
+                      )
+                    }
+                    activeClassName="text-white"
+                    aria-current={item.current ? 'page' : undefined}
+                  >
+                    {item.name}
+                  </NavLink>
                 </Disclosure.Button>
               ))}
             </div>
@@ -183,7 +195,7 @@ export default function Navbar() {
                       {userNavigation.map((item) => (
                         <Disclosure.Button
                           key={item.name}
-                          onClick={item.fn}
+                          onClick={() => item.fn()}
                           as="div"
                           className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white cursor-pointer"
                         >
