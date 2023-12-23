@@ -20,15 +20,15 @@ export default function Navbar() {
   const { isAuthenticated, currentUser, logOut } = useAuth()
 
   const navigation = [
-    { name: 'Forum',   fn: () => routes.home()   },
-    { name: 'Blog',    fn: () => routes.blog()    },
+    // { name: 'Forum',   fn: () => routes.home()   },
+    { name: 'Home',    fn: () => routes.home()    },
     { name: 'About',   fn: () => routes.about()   },
-    { name: 'Contact', fn: () => routes.contact() },
+    // { name: 'Contact', fn: () => routes.contact() },
   ]
 
   const userNavigation = [
-    { name: 'Your Profile', fn: () => {} },
-    { name: 'Settings',     fn: () => {} },
+    // { name: 'Your Profile', fn: () => {} },
+    // { name: 'Settings',     fn: () => {} },
     { name: 'Sign out',     fn: () => logOut() },
   ]
 
