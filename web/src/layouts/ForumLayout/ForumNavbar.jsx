@@ -4,9 +4,10 @@ import { Link, NavLink, routes } from '@redwoodjs/router'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
+// user is currently used for the dummy image URL only
 const user = {
-  name: 'Tom Cook',
-  email: 'tom@example.com',
+  // name: 'TODO: replace with actual user',
+  // email: 'user@user.com',
   imageUrl:
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
@@ -18,6 +19,7 @@ function classNames(...classes) {
 export default function Navbar() {
 
   const { isAuthenticated, currentUser, logOut } = useAuth()
+  console.log('%cTODO: add name to currentUser: ', 'color: deepskyblue; font-weight: bold;', currentUser);
 
   const navigation = [
     // { name: 'Forum',   fn: () => routes.home()   },
@@ -108,7 +110,8 @@ export default function Navbar() {
                                   onClick={item.fn}
                                   className={classNames(
                                     active ? 'bg-gray-100' : '',
-                                    'block px-4 py-2 text-sm text-gray-700'
+                                    'block px-4 py-2 text-sm text-gray-700',
+                                    'cursor-pointer'
                                   )}
                                 >
                                   {item.name}
@@ -147,7 +150,7 @@ export default function Navbar() {
                   href={item.href}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
+                    'block rounded-md px-3 py-2 text-base font-medium cursor-pointer'
                   )}
                   aria-current={item.current ? 'page' : undefined}
                 >
@@ -161,8 +164,8 @@ export default function Navbar() {
                   <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
                 </div>
                 <div className="ml-3">
-                  <div className="text-base font-medium text-white">{user.name}</div>
-                  <div className="text-sm font-medium text-gray-400">{user.email}</div>
+                  <div className="text-base font-medium text-white">{currentUser?.name}</div>
+                  <div className="text-sm font-medium text-gray-400">{currentUser?.email}</div>
                 </div>
                 <button
                   type="button"
@@ -179,7 +182,7 @@ export default function Navbar() {
                     key={item.name}
                     as="a"
                     href={item.href}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white cursor-pointer"
                   >
                     {item.name}
                   </Disclosure.Button>
