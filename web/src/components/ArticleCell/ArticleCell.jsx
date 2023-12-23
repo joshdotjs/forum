@@ -27,6 +27,7 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ article }) => {
   return (
+    // <Article key={article.id} article={article} summary={false} />
     <>
       <article>
         <header>

@@ -33,7 +33,7 @@ export const Success = ({ articles }) => {
       {articles.map((article) => {
         return (
           // <Article key={article.id} article={article} summary={true} />
-          <article>
+          <article key={`article-${article.id}`}>
             <header>
               <h2 className="text-xl text-blue-700 font-semibold">
                 <Link to={routes.article({ id: article.id })}>{article.title}</Link>
