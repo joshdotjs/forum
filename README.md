@@ -1,9 +1,5 @@
 # README
 
-
-## create app
-```yarn create redwood-app <app-name>```
-
 ## dev
 - **server**
 ```yarn redwood (rw) dev```

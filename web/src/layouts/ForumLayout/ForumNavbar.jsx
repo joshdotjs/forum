@@ -4,9 +4,8 @@ import { Link, NavLink, routes } from '@redwoodjs/router'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
+// user is currently used for the dummy image URL only
 const user = {
-  name: 'Tom Cook',
-  email: 'tom@example.com',
   imageUrl:
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
@@ -18,6 +17,7 @@ function classNames(...classes) {
 export default function Navbar() {
 
   const { isAuthenticated, currentUser, logOut } = useAuth()
+  console.log('%cTODO: add name to currentUser: ', 'color: deepskyblue; font-weight: bold;', currentUser);
 
   const navigation = [
     // { name: 'Forum',   fn: () => routes.home()   },
@@ -29,7 +29,7 @@ export default function Navbar() {
   const userNavigation = [
     // { name: 'Your Profile', fn: () => {} },
     // { name: 'Settings',     fn: () => {} },
-    { name: 'Sign out',     fn: () => logOut() },
+    { name: 'Log Out',     fn: () => logOut() },
   ]
 
   return (
@@ -108,7 +108,8 @@ export default function Navbar() {
                                   onClick={item.fn}
                                   className={classNames(
                                     active ? 'bg-gray-100' : '',
-                                    'block px-4 py-2 text-sm text-gray-700'
+                                    'block px-4 py-2 text-sm text-gray-700',
+                                    'cursor-pointer'
                                   )}
                                 >
                                   {item.name}
@@ -130,7 +131,7 @@ export default function Navbar() {
                       'rounded-md px-3 py-2 text-sm font-medium'
                     )}
                   >
-                    Login
+                    Log In
                   </Link>
                 </div>
               )}
@@ -147,7 +148,7 @@ export default function Navbar() {
                   href={item.href}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
+                    'block rounded-md px-3 py-2 text-base font-medium cursor-pointer'
                   )}
                   aria-current={item.current ? 'page' : undefined}
                 >
@@ -155,37 +156,56 @@ export default function Navbar() {
                 </Disclosure.Button>
               ))}
             </div>
-            <div className="border-t border-gray-700 pb-3 pt-4">
-              <div className="flex items-center px-5 sm:px-6">
-                <div className="flex-shrink-0">
-                  <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
-                </div>
-                <div className="ml-3">
-                  <div className="text-base font-medium text-white">{user.name}</div>
-                  <div className="text-sm font-medium text-gray-400">{user.email}</div>
-                </div>
-                <button
-                  type="button"
-                  className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                >
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+
+              <div className="border-t border-gray-700 pb-3 pt-4">
+                {
+                  isAuthenticated
+                ?
+                  <>
+                    <div className="flex items-center px-5 sm:px-6">
+                      <div className="flex-shrink-0">
+                        <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                      </div>
+                      <div className="ml-3">
+                        <div className="text-base font-medium text-white">{currentUser?.name}</div>
+                        <div className="text-sm font-medium text-gray-400">{currentUser?.email}</div>
+                      </div>
+                      <button
+                        type="button"
+                        className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                      >
+                        <span className="absolute -inset-1.5" />
+                        <span className="sr-only">View notifications</span>
+                        <BellIcon className="h-6 w-6" aria-hidden="true" />
+                      </button>
+                    </div>
+                    <div className="mt-3 space-y-1 px-2 sm:px-3">
+                      {userNavigation.map((item) => (
+                        <Disclosure.Button
+                          key={item.name}
+                          onClick={item.fn}
+                          as="div"
+                          className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white cursor-pointer"
+                        >
+                          {item.name}
+                        </Disclosure.Button>
+                      ))}
+                    </div>
+                  </>
+                :
+                  <div className="space-y-1 px-2 sm:px-3">
+                    <Disclosure.Button
+                      as="a"
+                      href='/signup'
+                      className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white cursor-pointer"
+                    >
+                      Log In
+                    </Disclosure.Button>
+                  </div>
+              }
+
               </div>
-              <div className="mt-3 space-y-1 px-2 sm:px-3">
-                {userNavigation.map((item) => (
-                  <Disclosure.Button
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                  >
-                    {item.name}
-                  </Disclosure.Button>
-                ))}
-              </div>
-            </div>
+
           </Disclosure.Panel>
         </>
       )}

@@ -31,9 +31,13 @@ const SignupPage = () => {
   }, [])
 
   const onSubmit = async (data) => {
+
+    console.log('SignupPage.onSubmit: data = ', data);
+
     const response = await signUp({
       username: data.email,
       password: data.password,
+      name: data.name,
     })
 
     if (response.message) {
@@ -80,8 +84,28 @@ const SignupPage = () => {
                       },
                     }}
                   />
-
                   <FieldError name="email" className="rw-field-error" />
+
+                  <Label
+                    name="name"
+                    className="rw-label"
+                    errorClassName="rw-label rw-label-error"
+                  >
+                    Display Name
+                  </Label>
+                  <TextField
+                    name="name"
+                    className="rw-input"
+                    errorClassName="rw-input rw-input-error"
+                    validation={{
+                      required: {
+                        value: true,
+                        message: 'Display name is required',
+                      },
+                    }}
+                  />
+                  <FieldError name="name" className="rw-field-error" />
+
 
                   <Label
                     name="password"
@@ -102,7 +126,6 @@ const SignupPage = () => {
                       },
                     }}
                   />
-
                   <FieldError name="password" className="rw-field-error" />
 
                   <div className="rw-button-group">
