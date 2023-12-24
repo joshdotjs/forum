@@ -54,7 +54,7 @@ const Mobile = ({ articles }) => {
           `}
           >
             <div
-              style={{ background: 'yellow'}}
+              style={{ background: 'limegreen'}}
               className={`
                 grid
                 grid-cols-[50px_1fr]
@@ -82,18 +82,18 @@ const Mobile = ({ articles }) => {
               </p>
             </div>
             <div
-              style={{ background: 'orange'}}
+              style={{ background: 'darkorange'}}
               className={`${ROW_STYLES}`}
             >
               <div></div>
-              <p style={{ background: 'blue'}} className="text-gray-400 font-normal"><strong>Poster: </strong>{article.user.name}</p>
+              <p style={{ background: 'darkorchid'}} className="text-gray-400 font-normal"><strong>Poster: </strong>{article.user.name}</p>
             </div>
             <div
-              style={{ background: 'orange'}}
+              style={{ background: 'darkorange'}}
               className={`${ROW_STYLES}`}
             >
               <div></div>
-              <p style={{ background: 'lightblue'}} className="text-gray-400 font-normal"><strong>Last Posted: </strong>Dec. 14, 2023 @ 2:22pm</p>
+              <p style={{ background: 'deepskyblue'}} className="text-gray-400 font-normal"><strong>Last Posted: </strong>Dec. 14, 2023 @ 2:22pm</p>
             </div>
           </article>
         )
