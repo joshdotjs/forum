@@ -10,7 +10,7 @@
   },
   "files.exclude": {
     ".gitignore": true,
-    "**/package.json": true,
+    // "**/package.json": true,
     ".yarn": true,
     "yarn.lock": true,
     ".yarnrc.yml": true,
