@@ -21,6 +21,7 @@ model User {
   roles               String    @default("user")
   threads             Thread[]
   posts               Post[]
+  comments            Comment[]
 }
 
 // ==============================================
@@ -57,6 +58,8 @@ model Comment {
   body      String
   post      Post     @relation(fields: [postId], references: [id])
   postId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
   createdAt DateTime @default(now())
 }
 
