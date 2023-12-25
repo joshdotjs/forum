@@ -32,7 +32,7 @@ export const Comment = {
   post: (_obj, { root }) => {
     return db.comment.findUnique({ where: { id: root?.id } }).post()
   },
-  // user: (_obj, { root }) => {
-  //   return db.comment.findFirst({ where: { id: root.id } }).user();
-  // },
+  user: (_obj, { root }) => {
+    return db.comment.findFirst({ where: { id: root.id } }).user();
+  },
 }

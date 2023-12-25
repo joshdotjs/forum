@@ -6,7 +6,7 @@ export const schema = gql`
     post: Post!
     postId: Int!
     createdAt: DateTime!
-    # user: User!
+    user: User!
   }
 
   type Query {
