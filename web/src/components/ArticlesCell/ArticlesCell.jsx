@@ -69,7 +69,7 @@ const Mobile = ({ articles }) => {
               >
                 <FolderPlusIcon
                   style={{
-                    height: '25px'
+                    height: '20px'
                   }}
                 />
               </p>
@@ -109,6 +109,7 @@ const Desktop = ({ articles }) => {
     grid-cols-[50px_1fr_1fr_1fr_1fr_1fr]
     gap-0 py-4
     border-gray-800
+    text-md
   `
   return (
     <div id="outer-container"
@@ -148,7 +149,7 @@ const Desktop = ({ articles }) => {
             >
               <FolderPlusIcon
                 style={{
-                  height: '25px'
+                  height: '20px'
                 }}
               />
             </p>
@@ -174,9 +175,9 @@ const Desktop = ({ articles }) => {
 
 export const Success = ({ articles }) => {
   return (
-    <>
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <Mobile  {...{ articles }} />
       <Desktop {...{ articles }} />
-    </>
+    </div>
   )
 }
