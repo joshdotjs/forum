@@ -67,11 +67,7 @@ const Mobile = ({ articles }) => {
                 className='flex items-center justify-center cursor-pointer'
                 onClick={() => alert('TODO: add functionality')}
               >
-                <FolderPlusIcon
-                  style={{
-                    height: '20px'
-                  }}
-                />
+                <FolderPlusIcon style={{ height: '18px' }} />
               </p>
               <p className="text-xl text-blue-700 font-semibold">
                 <Link to={routes.article({ id: article.id })}>
@@ -106,14 +102,14 @@ const Desktop = ({ articles }) => {
 
   const ROW_STYLES = `grid
     grid-rows-[1fr]
-    grid-cols-[50px_1fr_1fr_1fr_1fr_1fr]
-    gap-0 py-4
+    grid-cols-[50px_1fr_200px_65px_65px_65px]
+    gap-0 py-2
     border-gray-800
-    text-md
+    text-sm
   `
   return (
     <div id="outer-container"
-      className="hidden lg:block"
+      className="hidden lg:block pt-4"
     >
 
       <div id="title"
@@ -123,11 +119,31 @@ const Desktop = ({ articles }) => {
         `}
       >
         <h5> </h5>
-        <h5>Subject</h5>
-        <h5>Poster</h5>
-        <h5>Views</h5>
-        <h5>Replies</h5>
-        <h5>Last post</h5>
+        <h5
+          // style={{ background: 'lightblue' }}
+        >
+          Subject
+        </h5>
+        <h5
+          // style={{ background: 'lightgreen' }}
+        >
+          Poster
+        </h5>
+        <h5
+          // style={{ background: 'darkorchid' }}
+        >
+          Views
+        </h5>
+        <h5
+          // style={{ background: 'tomato' }}
+        >
+          Replies
+        </h5>
+        <h5
+          // style={{ background: 'deepskyblue' }}
+        >
+          Last post
+        </h5>
       </div>
 
       {articles.map((article) => {
@@ -136,7 +152,7 @@ const Desktop = ({ articles }) => {
           <article id="row"
             key={`article-${article.id}`}
             className={`${ROW_STYLES}
-              font-semibold text-gray-700
+              font-semibold text-gray-800
               border-b-2
           `}
           >
@@ -147,25 +163,23 @@ const Desktop = ({ articles }) => {
               className='flex items-center justify-center cursor-pointer'
               onClick={() => alert('TODO: add functionality')}
             >
-              <FolderPlusIcon
-                style={{
-                  height: '20px'
-                }}
-              />
+              <FolderPlusIcon style={{ height: '18px'}} />
             </p>
-            <p className="text-xl text-blue-700 font-semibold">
+            <p className="text-blue-700 font-semibold">
               <Link to={routes.article({ id: article.id })}>
-                <span className='inline sm:hidden'>{truncate(article.title, 16)}</span>
-                <span className='hidden sm:inline md:hidden'>{truncate(article.title, 20)}</span>
-                <span className='hidden md:inline lg:hidden'>{truncate(article.title, 10)}</span>
-                <span className='hidden lg:inline xl:'>{truncate(article.title, 20)}</span>
+                {/* <span className='inline lg:hidden'>{truncate(article.title, 16)}</span> */}
+                {/* <span className='hidden lg:inline'>{truncate(article.title, 20)}</span> */}
+                <span className='inline xl:hidden'>{truncate('012345678901234567890123456789012345678901234567890123456789', 56)}</span>
+
+                <span className='hidden xl:inline'>{truncate('012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789', 84)}</span>
               </Link>
             </p>
 
-            <p className="text-gray-400 font-normal">{article.user.name}</p>
-            <p className="text-gray-400 font-normal">0</p>
-            <p className="text-gray-400 font-normal">0</p>
-            <p className="text-gray-400 font-normal">0</p>
+            {/* <p className="text-gray-400 font-normal">{truncate(article.user.name, 20)}</p> */}
+            <p className="font-normal">{truncate('012345678901234567890123456789', 19)}</p>
+            <p className="font-normal">0</p>
+            <p className="font-normal">0</p>
+            <p className="font-normal">0</p>
           </article>
         )
       })}
