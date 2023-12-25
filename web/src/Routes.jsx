@@ -14,10 +14,17 @@ const Routes = () => {
       {/* TODO: RBAC / authorization to only allow current user to edit their own posts */}
       <PrivateSet unauthenticated='home' roles="admin">
         <Set wrap={ScaffoldLayout} title="Posts" titleTo="posts" buttonLabel="New Post" buttonTo="newPost">
-          <Route path="/admin/posts/new"           page={PostNewPostPage}  name="newPost" />
+          <Route path="/admin/posts/new"           page={PostNewPostPage}  name="newPost" /> {/* coppied to route: /new */}
           <Route path="/admin/posts/{id:Int}/edit" page={PostEditPostPage} name="editPost" />
           <Route path="/admin/posts/{id:Int}"      page={PostPostPage}     name="post" />
           <Route path="/admin/posts"               page={PostPostsPage}    name="posts" />
+        </Set>
+      </PrivateSet>
+
+
+      <PrivateSet unauthenticated='home' roles="user">
+        <Set wrap={ForumLabout}>
+          <Route path="/new"              page={PostNewPostPage}  name="newPost" /> {/* coppied from route: /admin/posts/new */}
         </Set>
       </PrivateSet>
 
@@ -26,8 +33,9 @@ const Routes = () => {
         {/* main pages */}
         <Route path="/about"            page={AboutPage}   name="about" />
         <Route path="/contact"          page={ContactPage} name="contact" />
-        {/* <Route path="/"                 page={ForumPage}   name="home" /> */}
+        <Route path="/forum"            page={ForumPage}   name="home" />
         <Route path="/"                 page={HomePage}   name="home" />
+
         <Route path="/thread/{id:Int}"  page={ThreadPage}  name="thread" />
         <Route path="/thread/new"       page={ThreadNewThreadPage}  name="newThread" />
         <Route path="/article/{id:Int}" page={ArticlePage} name="article" />

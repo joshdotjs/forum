@@ -2,6 +2,8 @@
 import { Link, routes } from '@redwoodjs/router'
 import { truncate } from 'src/lib/formatters'
 import { FolderPlusIcon } from '@heroicons/react/24/outline'
+import { PlusIcon } from '@heroicons/react/20/solid'
+import { useAuth } from 'src/auth'
 
 export const QUERY = gql`
   query ArticlesQuery {
@@ -51,8 +53,8 @@ const Mobile = ({ articles }) => {
               grid-rows-[1fr_1fr]
               grid-cols-[1fr]
               gap-0 py-2
-              border-gray-800
-              font-semibold text-gray-800
+              text-gray-300
+              font-semibold
               text-sm
           `}
           >
@@ -70,11 +72,12 @@ const Mobile = ({ articles }) => {
               >
                 <FolderPlusIcon style={{ height: '17px' }} />
               </p>
-              <p className="text-blue-700 font-semibold">
-                <Link to={routes.article({ id: article.id })}>
+              <p className="font-semibold">
+                <Link to={routes.article({ id: article.id })} className="text-indigo-400 hover:text-indigo-300">
                   <span className='inline xs:hidden sm:hidden'>{truncate(article.title, 24)}</span>
                   <span className='hidden sm:inline md:hidden'>{truncate(article.title, 48)}</span>
                   <span className='hidden md:inline '>{truncate(article.title, 64)}</span>
+                  <span className="sr-only">, {article.title}</span>
                 </Link>
               </p>
             </div>
@@ -99,8 +102,8 @@ const Mobile = ({ articles }) => {
                 // style={{ background: 'deepskyblue'}}
                 className="font-normal"
               >
-                  <strong>Last Post: </strong>Dec. 14, 2023 @ 2:22pm
-                </p>
+                <strong>Last Post: </strong>Dec. 14, 2023 @ 2:22pm
+              </p>
             </div>
           </article>
         )
@@ -125,7 +128,7 @@ const Desktop = ({ articles }) => {
 
       <div id="title"
         className={`${ROW_STYLES}
-          font-semibold text-gray-700
+          font-semibold text-white
           border-b-2
         `}
       >
@@ -163,7 +166,7 @@ const Desktop = ({ articles }) => {
           <article id="row"
             key={`article-${article.id}`}
             className={`${ROW_STYLES}
-              font-semibold text-gray-800
+              font-semibold text-gray-300
             `}
             style={{ borderBottomWidth: '1px' }}
           >
@@ -176,13 +179,13 @@ const Desktop = ({ articles }) => {
             >
               <FolderPlusIcon style={{ height: '18px'}} />
             </p>
-            <p className="text-blue-700 font-semibold">
-              <Link to={routes.article({ id: article.id })}>
+            <p className="font-semibold ">
+              <Link to={routes.article({ id: article.id })} className="text-indigo-400 hover:text-indigo-300">
                 {/* <span className='inline lg:hidden'>{truncate(article.title, 16)}</span> */}
                 {/* <span className='hidden lg:inline'>{truncate(article.title, 20)}</span> */}
                 <span className='inline xl:hidden'>{truncate('012345678901234567890123456789012345678901234567890123456789', 56)}</span>
-
                 <span className='hidden xl:inline'>{truncate('012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789', 84)}</span>
+                <span className="sr-only">, {article.title}</span>
               </Link>
             </p>
 
@@ -199,8 +202,35 @@ const Desktop = ({ articles }) => {
 }
 
 export const Success = ({ articles }) => {
+
+  const { isAuthenticated, currentUser, logOut } = useAuth()
+
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="bg-gray-900  mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 text-gray-300">
+
+      <div className="sm:flex sm:items-center">
+        <div className="sm:flex-auto">
+          <h1 className="text-base font-semibold leading-6 text-white">Threads</h1>
+          <p className="mt-2 text-sm text-gray-300">
+            A list of all the threads in the forum.
+          </p>
+        </div>
+        <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+
+            {isAuthenticated &&
+              <Link
+                to={routes.newPost()}
+                type="button"
+                className="relative inline-flex items-center gap-x-1.5 rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+              >
+                <PlusIcon className="-ml-0.5 h-5 w-5" aria-hidden="true" />
+                New Thread
+              </Link>
+            }
+
+        </div>
+      </div>
+
       <Mobile  {...{ articles }} />
       <Desktop {...{ articles }} />
     </div>
