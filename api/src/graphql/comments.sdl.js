@@ -23,7 +23,7 @@ export const schema = gql`
   }
 
   type Mutation {
-    createComment(input: CreateCommentInput!): Comment! @skipAuth
+    createComment(input: CreateCommentInput!): Comment! @requireAuth(roles: "user")
     deleteComment(id: Int!): Comment! @requireAuth(roles: "moderator")
   }
 `

@@ -2,6 +2,7 @@
 import { Link, routes } from '@redwoodjs/router'
 import CommentForm from 'src/components/CommentForm'
 import CommentsCell from 'src/components/CommentsCell'
+import { useAuth } from 'src/auth'
 
 export const QUERY = gql`
   query FindArticleQuery($id: Int!) {
@@ -26,6 +27,9 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ article }) => {
+
+  const { isAuthenticated, currentUser, logOut } = useAuth()
+
   return (
     // <Article key={article.id} article={article} summary={false} />
     <article>
@@ -44,9 +48,18 @@ export const Success = ({ article }) => {
       <div className="mt-12">
         <CommentsCell postId={article.id} />
       </div>
-      <div className="mt-12">
-        <CommentForm postId={article.id} />
-      </div>
+
+      {
+        isAuthenticated
+        ?
+        <div className="mt-12">
+          <CommentForm postId={article.id} />
+        </div>
+        :
+        <div className="mt-12">
+          Please <Link to={routes.login()}>log in</Link> to leave a comment!
+        </div>
+      }
 
     </article>
   )
