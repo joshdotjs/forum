@@ -36,40 +36,41 @@ const Mobile = ({ articles }) => {
 
   return (
     <div id="outer-container"
-      className="block lg:hidden"
+      className="block lg:hidden pt-2"
     >
       {articles.map((article) => {
         return (
           // <Article key={article.id} article={article} summary={true} />
           <article id="row"
             key={`article-${article.id}`}
+            style={{
+              borderBottomWidth: '1px'
+            }}
             className={`
               grid
               grid-rows-[1fr_1fr]
               grid-cols-[1fr]
-              gap-0 py-4
+              gap-0 py-2
               border-gray-800
-              font-semibold text-gray-700
-              border-b-2
+              font-semibold text-gray-800
+              text-sm
           `}
           >
             <div
-              style={{ background: 'limegreen'}}
+              // style={{ background: 'limegreen'}}
               className={`
                 grid
                 grid-cols-[50px_1fr]
               `}
             >
               <p
-                style={{
-                  // background: 'green'
-                }}
+                // style={{ background: 'green' }}
                 className='flex items-center justify-center cursor-pointer'
                 onClick={() => alert('TODO: add functionality')}
               >
-                <FolderPlusIcon style={{ height: '18px' }} />
+                <FolderPlusIcon style={{ height: '17px' }} />
               </p>
-              <p className="text-xl text-blue-700 font-semibold">
+              <p className="text-blue-700 font-semibold">
                 <Link to={routes.article({ id: article.id })}>
                   <span className='inline xs:hidden sm:hidden'>{truncate(article.title, 24)}</span>
                   <span className='hidden sm:inline md:hidden'>{truncate(article.title, 48)}</span>
@@ -78,18 +79,28 @@ const Mobile = ({ articles }) => {
               </p>
             </div>
             <div
-              style={{ background: 'darkorange'}}
+              // style={{ background: 'darkorange'}}
               className={`${ROW_STYLES}`}
             >
               <div></div>
-              <p style={{ background: 'darkorchid'}} className="text-gray-400 font-normal"><strong>Poster: </strong>{article.user.name}</p>
+              <p
+                // style={{ background: 'darkorchid'}}
+                className="font-normal"
+              >
+                <strong>By: </strong>{article.user.name}
+              </p>
             </div>
             <div
-              style={{ background: 'darkorange'}}
+              // style={{ background: 'yellow'}}
               className={`${ROW_STYLES}`}
             >
               <div></div>
-              <p style={{ background: 'deepskyblue'}} className="text-gray-400 font-normal"><strong>Last Posted: </strong>Dec. 14, 2023 @ 2:22pm</p>
+              <p
+                // style={{ background: 'deepskyblue'}}
+                className="font-normal"
+              >
+                  <strong>Last Post: </strong>Dec. 14, 2023 @ 2:22pm
+                </p>
             </div>
           </article>
         )
@@ -153,8 +164,8 @@ const Desktop = ({ articles }) => {
             key={`article-${article.id}`}
             className={`${ROW_STYLES}
               font-semibold text-gray-800
-              border-b-2
-          `}
+            `}
+            style={{ borderBottomWidth: '1px' }}
           >
             <p
               style={{
