@@ -55,6 +55,7 @@ const Mobile = ({ articles }) => {
               gap-0 py-2
               text-gray-300
               font-semibold
+              border-gray-800
               text-sm
           `}
           >

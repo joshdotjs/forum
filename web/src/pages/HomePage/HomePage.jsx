@@ -19,7 +19,8 @@ const HomePage = () => {
       >
         <h1 className="mb-2 text-xl">TulsaForums.com</h1>
         <h1 className="mb-2">Coming Soon</h1>
-        <h1 className="">Launching Jan 2024</h1>
+        <h1 className="mb-2">Launching Jan 2024</h1>
+        <h1 className="">(we will use a faster database once launched)</h1>
       </div>
     </>
   )
