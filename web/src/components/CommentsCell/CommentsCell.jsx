@@ -4,7 +4,6 @@ export const QUERY = gql`
   query CommentsQuery($postId: Int!) {
     comments(postId: $postId) {
       id
-      name
       body
       postId
       createdAt

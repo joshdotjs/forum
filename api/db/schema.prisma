@@ -54,7 +54,6 @@ model Thread {
 model Comment {
   // COMMENT / THREAD_REPLY
   id        Int      @id @default(autoincrement())
-  name      String
   body      String
   post      Post     @relation(fields: [postId], references: [id])
   postId    Int

@@ -1,7 +1,6 @@
 export const schema = gql`
   type Comment {
     id: Int!
-    name: String!
     body: String!
     post: Post!
     postId: Int!
@@ -14,13 +13,11 @@ export const schema = gql`
   }
 
   input CreateCommentInput {
-    name: String!
     body: String!
     postId: Int!
   }
 
   input UpdateCommentInput {
-    name: String
     body: String
     postId: Int
   }
