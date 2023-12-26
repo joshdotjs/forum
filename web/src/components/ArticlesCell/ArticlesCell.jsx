@@ -207,7 +207,7 @@ export const Success = ({ articles }) => {
   const { isAuthenticated, currentUser, logOut } = useAuth()
 
   return (
-    <div className="bg-gray-900 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 text-gray-300">
+    <>
 
       <div className="flex sm:items-center">
         <div className="flex-auto">
@@ -234,6 +234,6 @@ export const Success = ({ articles }) => {
 
       <Mobile  {...{ articles }} />
       <Desktop {...{ articles }} />
-    </div>
+    </>
   )
 }
