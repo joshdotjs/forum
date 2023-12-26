@@ -1,4 +1,5 @@
-import Comment from 'src/components/Comment'
+// import Comment from 'src/components/Comment'
+import Entry from 'src/components/Entry/Entry'
 
 export const QUERY = gql`
   query CommentsQuery($postId: Int!) {
@@ -24,10 +25,11 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ comments }) => {
   return (
-    <div className="space-y-8">
+    <>
       {comments.map((comment) => (
-        <Comment key={comment.id} comment={comment} />
+        // <Comment key={comment.id} comment={comment} />
+        <Entry key={comment.id} entry={comment} />
       ))}
-    </div>
+    </>
   )
 }

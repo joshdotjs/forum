@@ -7,7 +7,7 @@ const HomePage = () => {
       <MetaTags title="Home" description="Home page" />
       <ArticlesCell />
 
-      {/* <div
+      <div
         style={{
           height: '50vh',
           // background: 'limegreen',
@@ -30,7 +30,7 @@ const HomePage = () => {
             <li>Thread categories</li>
           </ul>
         </div>
-      </div> */}
+      </div>
     </>
   )
 }
