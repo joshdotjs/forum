@@ -10,7 +10,7 @@
   },
   "files.exclude": {
     ".gitignore": true,
-    // "**/package.json": true,
+    "**/package.json": true,
     ".yarn": true,
     "yarn.lock": true,
     ".yarnrc.yml": true,
@@ -31,7 +31,7 @@
     "**/.keep": true,
     "**/types": true,
     "web/config": true,
-    // "web/src/index.html": true,
+    "web/src/index.html": true,
     "web/src/App.jsx": true,
     "web/src/entry.client.jsx": true,
   }
