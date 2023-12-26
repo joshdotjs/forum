@@ -11,8 +11,14 @@ export const comment = ({ id }) => {
 }
 
 export const createComment = ({ input }) => {
+
+  console.log('input: ', input);
+
   return db.comment.create({
-    data: input,
+    data: {
+      ...input,
+      userId: context.currentUser.id,
+    },
   })
 }
 
@@ -25,5 +31,8 @@ export const deleteComment = ({ id }) => {
 export const Comment = {
   post: (_obj, { root }) => {
     return db.comment.findUnique({ where: { id: root?.id } }).post()
+  },
+  user: (_obj, { root }) => {
+    return db.comment.findFirst({ where: { id: root.id } }).user();
   },
 }
