@@ -38,7 +38,7 @@ const CommentForm = ({ postId }) => {
 
   return (
     <div className={hasPosted ? 'hidden' : ''}>
-      <h3 className="font-light text-lg text-gray-600">Leave a Comment</h3>
+      <h3 className="font-light text-lg text-gray-300">Leave a Reply</h3>
       <Form className="mt-4 w-full" onSubmit={onSubmit}>
         <FormError
           error={error}
@@ -48,21 +48,21 @@ const CommentForm = ({ postId }) => {
 
         <Label
           name="body"
-          className="block mt-4 text-xs font-semibold text-gray-500 uppercase"
+          className="sr-only block mt-4 text-xs font-semibold text-gray-500 uppercase"
         >
-          Comment
+          Reply
         </Label>
         <TextAreaField
           name="body"
-          className="block w-full p-1 border rounded h-24 text-sm"
+          className="block w-full p-1 border rounded h-24 text-sm mb-4"
           validation={{ required: true }}
         />
 
         <Submit
           disabled={loading}
-          className="block mt-4 bg-blue-500 text-white text-xs font-semibold uppercase tracking-wide rounded px-3 py-2 disabled:opacity-50"
+          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
-          Submit
+          Create Reply
         </Submit>
       </Form>
     </div>

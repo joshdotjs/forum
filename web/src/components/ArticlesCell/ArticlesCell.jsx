@@ -207,27 +207,27 @@ export const Success = ({ articles }) => {
   const { isAuthenticated, currentUser, logOut } = useAuth()
 
   return (
-    <div className="bg-gray-900  mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 text-gray-300">
+    <div className="bg-gray-900 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 text-gray-300">
 
-      <div className="sm:flex sm:items-center">
-        <div className="sm:flex-auto">
+      <div className="flex sm:items-center">
+        <div className="flex-auto">
           <h1 className="text-base font-semibold leading-6 text-white">Threads</h1>
-          <p className="mt-2 text-sm text-gray-300">
+          <p className="mt-2 text-sm text-gray-300 hidden sm:inline-block">
             A list of all the threads in the forum.
           </p>
         </div>
-        <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+        <div className="sm:mt-4 ml-16 flex-none">
 
-            {isAuthenticated &&
-              <Link
-                to={routes.newPost()}
-                type="button"
-                className="relative inline-flex items-center gap-x-1.5 rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-              >
-                <PlusIcon className="-ml-0.5 h-5 w-5" aria-hidden="true" />
-                New Thread
-              </Link>
-            }
+          {isAuthenticated &&
+            <Link
+              to={routes.newPost()}
+              type="button"
+              className="relative inline-flex items-center gap-x-1.5 rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+            >
+              <PlusIcon className="-ml-0.5 h-5 w-5" aria-hidden="true" />
+              New Thread
+            </Link>
+          }
 
         </div>
       </div>

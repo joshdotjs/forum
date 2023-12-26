@@ -9,7 +9,7 @@ const HomePage = () => {
 
       <div
         style={{
-          height: '50vh',
+
           // background: 'limegreen',
           display: 'flex',
           flexDirection: 'column',

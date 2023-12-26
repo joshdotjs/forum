@@ -14,7 +14,9 @@ const ForumLayout = ({ children }) => {
     >
       <Toaster />
       <Navbar />
-      {children}
+      <main>
+        {children}
+      </main>
       <Footer style={{ marginTop: 'auto' }} />
     </div>
   )
