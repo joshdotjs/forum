@@ -38,7 +38,12 @@ const Entry = ({ entry }) => {
 
         <div style={{ padding: '0.5rem' }}>
           {entry?.title && <p className="mb-2"><b>Title:</b> {entry.title}</p> }
-          <p style={{ opacity: '0.4'}}><span>{formatDate(entry.createdAt)}</span> <span className="mx-2">|</span> <span>{formatTime(entry.createdAt)}</span></p>
+          <p style={{ opacity: '0.4'}}>
+            <span>{formatDate(entry.createdAt)}</span>
+            <span className="mx-2 hidden sm:inline">|</span>
+            <br className="inline sm:hidden"/>
+            <span>{formatTime(entry.createdAt)}</span>
+          </p>
         </div>
 
         <p style={{ padding: '0.5rem' }}>{entry.body}</p>
