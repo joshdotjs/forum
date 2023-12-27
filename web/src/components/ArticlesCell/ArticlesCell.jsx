@@ -117,7 +117,7 @@ const Desktop = ({ articles }) => {
 
   const ROW_STYLES = `grid
     grid-rows-[1fr]
-    grid-cols-[50px_1fr_200px_65px_180px]
+    grid-cols-[50px_1fr_200px_75px_180px]
     gap-0 py-2
     border-gray-800
     text-sm
@@ -177,16 +177,16 @@ const Desktop = ({ articles }) => {
             </p>
             <p className="font-semibold ">
               <Link to={routes.article({ id: article.id })} className="text-indigo-400 hover:text-indigo-300">
-                {/* <span className='inline lg:hidden'>{truncate(article.title, 16)}</span> */}
-                {/* <span className='hidden lg:inline'>{truncate(article.title, 20)}</span> */}
-                <span className='inline xl:hidden'>{truncate('012345678901234567890123456789012345678901234567890123456789', 56)}</span>
-                <span className='hidden xl:inline'>{truncate('012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789', 84)}</span>
+                {/* <span className='inline xl:hidden'>{truncate('012345678901234567890123456789012345678901234567890123456789', 48)}</span> */}
+                {/* <span className='hidden xl:inline'>{truncate('012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789', 78)}</span> */}
+                <span className='inline xl:hidden'>{truncate(article.title, 48)}</span>
+                <span className='hidden xl:inline'>{truncate(article.title, 78)}</span>?
                 <span className="sr-only">, {article.title}</span>
               </Link>
             </p>
 
-            {/* <p className="text-gray-400 font-normal">{truncate(article.user.name, 20)}</p> */}
-            <p className="font-normal">{truncate('012345678901234567890123456789', 19)}</p>
+            {/* <p className="font-normal">{truncate('012345678901234567890123456789', 19)}</p> */}
+            <p className="font-normal">{truncate(article.user.name, 19)}</p>
             <p className="font-normal">{ article.comments.length }</p>
             <p className="font-normal">
               {/* <span>{ formatDate(article.comments.at(-1)?.createdAt) }</span><span className="mx-2">|</span><span>{formatTime(article.comments.at(-1)?.createdAt)}</span> */}
