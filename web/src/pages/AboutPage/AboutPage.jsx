@@ -22,8 +22,8 @@ const stats = [
 ]
 const values = [
   {
-    name: 'Be world-class.',
-    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
+    name: 'Community Engagement: ',
+    description: 'Promoting community engagement and connection among Tulsa residents',
     icon: RocketLaunchIcon,
   },
   // {
@@ -32,18 +32,18 @@ const values = [
   //   icon: HandRaisedIcon,
   // },
   {
-    name: 'Be supportive.',
-    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus voluptas blanditiis et.',
+    name: 'Welcoming Discussions: ',
+    description: 'Fostering a welcoming environment for diverse discussions',
     icon: UserGroupIcon,
   },
   {
-    name: 'Always learning.',
-    description: 'Iure sed ab. Aperiam optio placeat dolor facere. Officiis pariatur eveniet atque et dolor.',
+    name: 'Civic Participation: ',
+    description: 'Encouraging active civic participation and local involvement.',
     icon: AcademicCapIcon,
   },
   {
-    name: 'Share everything you know.',
-    description: 'Laudantium tempora sint ut consectetur ratione. Ut illum ut rem numquam fuga delectus.',
+    name: 'Informational Exchange: ',
+    description: 'Providing a reliable platform for information exchange and cultural enrichment.',
     icon: SparklesIcon,
   },
   // {
@@ -191,8 +191,9 @@ function Page() {
           <div className="mx-auto max-w-2xl pt-24 text-center sm:pt-40">
             <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">About TulsaForums.com</h2>
             <p className="mt-6 text-lg leading-8 text-gray-300">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat fugiat aliqua.
+              Uniting Voices, Sharing Stories.
+              <br/>
+              Experience the Heartbeat of Our Tulsa Community.
             </p>
           </div>
         </div>
@@ -203,27 +204,18 @@ function Page() {
             <div className="grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-gray-300 lg:max-w-none lg:grid-cols-2">
               <div>
                 <p>
-                  Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
-                  vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque
-                  erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-                  semper sed amet vitae sed turpis id.
+                  TulsaForums.com serves as a pivotal online community for residents and enthusiasts of Tulsa, Oklahoma. This digital platform fosters a sense of connectedness and community among its members by providing a space for various types of discussions and interactions. The forum is known for its user-friendly interface and a welcoming atmosphere that appeals to a broad spectrum of users, including long-time residents and newcomers to the area. It has become a go-to destination for those looking to engage with others in the Tulsa community, promoting a sense of unity and shared identity.
                 </p>
                 <p className="mt-8">
-                  Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie
-                  auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices
-                  hac adipiscing egestas.
+                  The site plays an essential role in encouraging civic engagement and participation. TulsaForums.com is more than just a space for casual conversation; it serves as a valuable resource for community-related information and activities. The platform facilitates the organization and promotion of local events and initiatives, demonstrating its commitment to active citizenship and community development. This aspect of the forum highlights its importance in fostering a sense of responsibility and involvement among its members.
                 </p>
               </div>
               <div>
                 <p>
-                  Erat pellentesque dictumst ligula porttitor risus eget et eget. Ultricies tellus felis id dignissim
-                  eget. Est augue maecenas risus nulla ultrices congue nunc tortor. Enim et nesciunt doloremque nesciunt
-                  voluptate.
+                  TulsaForums.com also stands out as a cultural hub, where members can delve into various aspects of Tulsa's vibrant cultural and recreational life. The forum provides an avenue for cultural exchange and promotes activities that reflect the dynamic lifestyle of the city. It is a place where people with diverse interests can come together, fostering a strong community bond.
                 </p>
                 <p className="mt-8">
-                  Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie
-                  auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices
-                  hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.
+                  Overall, TulsaForums.com is a crucial component of the digital landscape in Tulsa, offering a space for connection, information exchange, and community building. It embodies the spirit of Tulsa by providing an online platform that mirrors the city's dynamic and engaged community. The forum's impact extends beyond just conversation, contributing significantly to the social and cultural fabric of Tulsa.
                 </p>
               </div>
             </div>
@@ -252,8 +244,7 @@ function Page() {
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Our values</h2>
             <p className="mt-6 text-lg leading-8 text-gray-300">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste
-              dolor cupiditate blanditiis.
+            TulsaForums.com values fostering a sense of community and engagement among Tulsa residents by providing an informative online platform for discussion and civic participation.
             </p>
           </div>
           <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base leading-7 text-gray-300 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-16">
@@ -304,7 +295,7 @@ function Page() {
               <div className="w-full flex-auto">
                 <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Contribute!</h2>
                 <p className="mt-6 text-lg leading-8 text-gray-300">
-                  This website is built with a fullstack JavaScript tech stack based around Redwood.js using React, Node.js, Prisma, GraphQL, and PostgreSQL. You can contribute to this project by submitting a pull request on our GitHub repository. If you don't know how to code Josh will provide you with free 1-on-1 lessons.
+                  This website is built with a fullstack JavaScript tech stack using React, Node.js, Prisma, GraphQL, and PostgreSQL. You can contribute to this project by submitting a pull request on our GitHub repository. If you don't know how to code Josh will provide you with free 1-on-1 lessons.
                 </p>
                 <ul
                   role="list"
