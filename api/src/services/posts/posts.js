@@ -12,4 +12,6 @@ export const post = ({ id }) => {
 export const Post = {
   user: (_obj, { root }) =>
     db.post.findFirst({ where: { id: root.id } }).user(),
+  comments: (_obj, { root }) =>
+    db.post.findFirst({ where: { id: root.id } }).comments(),
 }
