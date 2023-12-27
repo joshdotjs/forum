@@ -117,7 +117,7 @@ const Desktop = ({ articles }) => {
 
   const ROW_STYLES = `grid
     grid-rows-[1fr]
-    grid-cols-[50px_1fr_200px_65px_65px_65px]
+    grid-cols-[50px_1fr_200px_65px_180px]
     gap-0 py-2
     border-gray-800
     text-sm
@@ -143,11 +143,6 @@ const Desktop = ({ articles }) => {
           // style={{ background: 'lightgreen' }}
         >
           Poster
-        </h5>
-        <h5
-          // style={{ background: 'darkorchid' }}
-        >
-          Views
         </h5>
         <h5
           // style={{ background: 'tomato' }}
@@ -192,7 +187,6 @@ const Desktop = ({ articles }) => {
 
             {/* <p className="text-gray-400 font-normal">{truncate(article.user.name, 20)}</p> */}
             <p className="font-normal">{truncate('012345678901234567890123456789', 19)}</p>
-            <p className="font-normal">0</p>
             <p className="font-normal">{ article.comments.length }</p>
             <p className="font-normal">
               {/* <span>{ formatDate(article.comments.at(-1)?.createdAt) }</span><span className="mx-2">|</span><span>{formatTime(article.comments.at(-1)?.createdAt)}</span> */}
