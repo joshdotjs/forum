@@ -17,6 +17,7 @@ export const QUERY = gql`
       }
       comments {
         id
+        createdAt
       }
     }
   }
@@ -193,7 +194,26 @@ const Desktop = ({ articles }) => {
             <p className="font-normal">{truncate('012345678901234567890123456789', 19)}</p>
             <p className="font-normal">0</p>
             <p className="font-normal">{ article.comments.length }</p>
-            <p className="font-normal">0</p>
+            <p className="font-normal">
+              {/* <span>{ formatDate(article.comments.at(-1)?.createdAt) }</span><span className="mx-2">|</span><span>{formatTime(article.comments.at(-1)?.createdAt)}</span> */}
+              {
+                article.comments.at(-1)?.createdAt
+                ?
+                  <>
+                    {/* display the date of the most recent comment */}
+                    <span>{formatDate(article.comments.at(-1)?.createdAt)}</span>
+                    <span className="mx-2">|</span>
+                    <span>{formatTime(article.comments.at(-1)?.createdAt)}</span>
+                  </>
+                :
+                <>
+                  {/* display the date the original post was made */}
+                  <span>{formatDate(article.createdAt)}</span>
+                  <span className="mx-2">|</span>
+                  <span>{formatTime(article.createdAt)}</span>
+                </>
+                }
+            </p>
           </article>
         )
       })}
