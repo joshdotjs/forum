@@ -46,7 +46,6 @@ const Comment = ({ comment }) => {
 
       <p className="text-sm mt-2">{comment.body}</p>
 
-
       <header className="flex justify-between">
         <h2 className="font-semibold text-gray-700">— {comment.user.name}</h2>
         <time className="text-xs text-gray-500" dateTime={comment.createdAt}>

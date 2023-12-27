@@ -34,11 +34,8 @@ export const Success = ({ article }) => {
   return (
     // <Article key={article.id} article={article} summary={false} />
     <article>
-
       <Entry entry={article} />
-
-        <CommentsCell postId={article.id} />
-
+      <CommentsCell postId={article.id} />
       {
         isAuthenticated
         ?
@@ -50,7 +47,6 @@ export const Success = ({ article }) => {
           Please <Link to={routes.login()}>log in</Link> to leave a comment!
         </div>
       }
-
     </article>
   )
 }
