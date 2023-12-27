@@ -15,13 +15,12 @@ export const QUERY = gql`
       user {
         name
       }
+      comments {
+        id
+      }
     }
   }
 `
-
-// const truncate = (text, length) => {
-//   return text.substring(0, length) + '...'
-// }
 
 export const Loading = () => <div>Loading...</div>
 
@@ -193,7 +192,7 @@ const Desktop = ({ articles }) => {
             {/* <p className="text-gray-400 font-normal">{truncate(article.user.name, 20)}</p> */}
             <p className="font-normal">{truncate('012345678901234567890123456789', 19)}</p>
             <p className="font-normal">0</p>
-            <p className="font-normal">0</p>
+            <p className="font-normal">{ article.comments.length }</p>
             <p className="font-normal">0</p>
           </article>
         )
