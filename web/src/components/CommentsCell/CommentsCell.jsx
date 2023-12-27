@@ -1,4 +1,3 @@
-// import Comment from 'src/components/Comment'
 import Entry from 'src/components/Entry/Entry'
 
 export const QUERY = gql`

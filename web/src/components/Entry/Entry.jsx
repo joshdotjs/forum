@@ -1,7 +1,4 @@
-import dayjs from "dayjs"
-
-const formatDate     = (date_time) => dayjs(date_time).format('YYYY-MM-DD');
-const formatTime     = (date_time) => dayjs(date_time).format('h:mm:ss a');
+import { formatDate, formatTime } from "src/lib/formatters"
 
 const Entry = ({ entry }) => {
   return (

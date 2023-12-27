@@ -56,3 +56,7 @@ export const timeTag = (dateTime) => {
 export const checkboxInputTag = (checked) => {
   return <input type="checkbox" checked={checked} disabled />
 }
+
+import dayjs from "dayjs" // date_time is coming in from the DB
+export const formatDate = (date_time) => dayjs(date_time).format('YYYY-MM-DD');
+export const formatTime = (date_time) => dayjs(date_time).format('h:mm:ss a');

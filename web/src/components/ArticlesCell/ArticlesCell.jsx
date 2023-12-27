@@ -1,9 +1,9 @@
-// import Article from 'src/components/Article'
 import { Link, routes } from '@redwoodjs/router'
 import { truncate } from 'src/lib/formatters'
 import { FolderPlusIcon } from '@heroicons/react/24/outline'
 import { PlusIcon } from '@heroicons/react/20/solid'
 import { useAuth } from 'src/auth'
+import { formatDate, formatTime } from "src/lib/formatters"
 
 export const QUERY = gql`
   query ArticlesQuery {
@@ -103,7 +103,7 @@ const Mobile = ({ articles }) => {
                 // style={{ background: 'deepskyblue'}}
                 className="font-normal"
               >
-                <strong>Last Post: </strong>Dec. 14, 2023 @ 2:22pm
+                <strong>Last Post: </strong>{formatDate(article.createdAt)}<span></span><span className="mx-2">|</span><span>{formatTime(article.createdAt)}</span>
               </p>
             </div>
           </article>
