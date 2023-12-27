@@ -214,7 +214,7 @@ const CommentForm = ({ postId }) => {
         </Label>
         <TextAreaField
           name="body"
-          className="block w-full p-1 border rounded h-24 text-sm mb-4"
+          className="block w-full p-1 border rounded h-24 text-sm mb-4 text-black"
           validation={{ required: true }}
         />
 
@@ -225,7 +225,7 @@ const CommentForm = ({ postId }) => {
           Create Reply
         </Submit>
 
-        <TextArea />
+        {/* <TextArea /> */}
       </Form>
     </div>
   )

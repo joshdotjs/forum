@@ -1,7 +1,21 @@
+import dayjs from "dayjs"
+
+const formatDate     = (date_time) => date_time.format('YYYY-MM-DD');
+// const formatTime     = (date_time) => date_time.format('HH:mm:ssZ');
+const formatTime     = (date_time) => date_time.format('h:mm:ss a');
+// const formatDateTime = (date, time) => `${formatDate(date)} ${formatTime(time)}`;
+
+// const formattedDate = (datetime) => {
+//   const parsedDate = new Date(datetime)
+//   const month = parsedDate.toLocaleString('default', { month: 'long' })
+//   const time = dayjs(datetime).format('h:mm:ss a')
+//   return `${parsedDate.getDate()} ${month} ${parsedDate.getFullYear()} | ${time}`
+// }
 const formattedDate = (datetime) => {
-  const parsedDate = new Date(datetime)
-  const month = parsedDate.toLocaleString('default', { month: 'long' })
-  return `${parsedDate.getDate()} ${month} ${parsedDate.getFullYear()}`
+  const date_time = dayjs(datetime)
+  const date = formatDate(date_time)
+  const time = formatTime(date_time)
+  return `${date} | ${time}`
 }
 
 const Entry = ({ entry }) => {
