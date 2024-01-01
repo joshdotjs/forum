@@ -54,15 +54,15 @@ const values = [
 ]
 const team = [
   {
-    name: 'Josh',
-    role: 'Developer / Tech Lead',
+    name: '',
+    role: '',
     imageUrl:
     'https://source.unsplash.com/random/1024x1024/?animal',
     location: 'Tulsa, Oklahoma',
   },
   {
-    name: 'Arius',
-    role: 'Developer / Tester',
+    name: '',
+    role: '',
     imageUrl:
     'https://source.unsplash.com/random/1024x1024/?animal',
     location: 'Tulsa, Oklahoma',
@@ -71,8 +71,6 @@ const team = [
 const benefits = [
   'Anyone can contribute',
   'Just submit a pull request',
-  'Contact if you can\'t code',
-  'Free coding lessons',
 ]
 const footerNavigation = {
   solutions: [
@@ -295,7 +293,7 @@ function Page() {
               <div className="w-full flex-auto">
                 <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Contribute!</h2>
                 <p className="mt-6 text-lg leading-8 text-gray-300">
-                  This website is built with a fullstack JavaScript tech stack using React, Node.js, Prisma, GraphQL, and PostgreSQL. You can contribute to this project by submitting a pull request on our GitHub repository. If you don't know how to code Josh will provide you with free 1-on-1 lessons.
+                  This website is built with a fullstack JavaScript tech stack using React, Node.js, Prisma, GraphQL, and PostgreSQL. You can contribute to this project by submitting a pull request on our GitHub repository.
                 </p>
                 <ul
                   role="list"
