@@ -17,11 +17,12 @@ const HomePage = () => {
           paddingTop: '10%',
         }}
       >
-        <h1 className="mb-2 text-xl">TulsaForums.com</h1>
-        <h1 className="mb-2">Coming Soon</h1>
-        <h1 className="mb-2">Launching Jan 2024</h1>
-        <h1 className="">(we will use a faster database once launched)</h1>
+        {/* <h1 className="mb-2 text-xl">TulsaForums.com</h1> */}
+        {/* <h1 className="mb-2">Coming Soon</h1> */}
+        {/* <h1 className="mb-2">Launching Jan 2024</h1> */}
+        {/* <h1 className="">(we will use a faster database once launched)</h1> */}
 
+        {/*
         <div>
           <ul>
             <li><strong>Features Coming Soon:</strong></li>
@@ -30,6 +31,7 @@ const HomePage = () => {
             <li>Thread categories</li>
           </ul>
         </div>
+        */}
       </div>
     </>
   )

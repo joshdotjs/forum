@@ -180,7 +180,7 @@ const Desktop = ({ articles }) => {
                 {/* <span className='inline xl:hidden'>{truncate('012345678901234567890123456789012345678901234567890123456789', 48)}</span> */}
                 {/* <span className='hidden xl:inline'>{truncate('012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789', 78)}</span> */}
                 <span className='inline xl:hidden'>{truncate(article.title, 48)}</span>
-                <span className='hidden xl:inline'>{truncate(article.title, 78)}</span>?
+                <span className='hidden xl:inline'>{truncate(article.title, 78)}</span>
                 <span className="sr-only">, {article.title}</span>
               </Link>
             </p>

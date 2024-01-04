@@ -20,9 +20,9 @@ export default function Navbar() {
   console.log('%cTODO: add name to currentUser: ', 'color: deepskyblue; font-weight: bold;', currentUser);
 
   const navigation = [
-    // { name: 'Forum',   fn: () => routes.home()   },
-    { name: 'Home',    fn: () => routes.home()    },
-    { name: 'About',   fn: () => routes.about()   },
+    { name: 'Forum',   fn: () => routes.home()   },
+    // { name: 'Home',    fn: () => routes.home()    },
+    // { name: 'About',   fn: () => routes.about()   },
     // { name: 'Contact', fn: () => routes.contact() },
   ]
 
