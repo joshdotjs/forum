@@ -44,7 +44,7 @@ export const Success = ({ article }) => {
         </div>
         :
         <div className="mt-12">
-          Please <Link to={routes.login()} style={{ color: 'rgb(129 140 248)' }}>log in</Link> to leave a comment!
+          Please <Link to={routes.login()} style={{ color: 'rgb(129 140 248)' }}>log in</Link> to leave a reply!
         </div>
       }
     </article>
