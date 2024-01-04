@@ -136,7 +136,7 @@ export default async () => {
     //   update: {},
     // })
     const users = [
-      { name: 'admin doe',     email: 'admin@admin.com', password: 'admin', roles: 'admin'     },
+      { name: 'josh h.',       email: 'admin@admin.com', password: 'admin', roles: 'admin'     },
       { name: 'moderator doe', email: 'mod@mod.com',     password: 'mod'  , roles: 'moderator' },
       { name: 'user doe',      email: 'user@user.com',   password: 'user' , roles: 'user'      },
     ]
